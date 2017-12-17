@@ -48,28 +48,23 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="leave" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="fixinfo" min="-2" pref="93" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="curfewinfo" min="-2" pref="105" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="asset" min="-2" pref="111" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="logout" min="-2" pref="71" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="myinfo" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="stu" min="-2" pref="105" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="mail" min="-2" pref="108" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
-                      </Group>
+                  <Component id="leave" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="fixinfo" min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="logout" min="-2" pref="71" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="curfewinfo" min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="myinfo" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="asset" min="-2" pref="111" max="-2" attributes="0"/>
+                      <Component id="stu" min="-2" pref="105" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -81,7 +76,6 @@
                       <Component id="logout" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="myinfo" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="stu" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Component id="mail" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -109,11 +103,6 @@
         <Component class="javax.swing.JButton" name="stu">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x5b66;&#x751f;&#x7ba1;&#x7406;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="mail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x5feb;&#x4ef6;&#x7ba1;&#x7406;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="leave">
