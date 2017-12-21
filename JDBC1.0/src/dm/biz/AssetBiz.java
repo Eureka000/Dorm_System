@@ -9,13 +9,13 @@ public interface AssetBiz {
 	public boolean add(Asset a);
 
 	// 2 删除学生
-	public boolean delete(String sno);
+	public boolean delete(String ano);
 
 	// 3 修改学生
-	public boolean update(Asset s);
+	public boolean update(Asset a);
 
 	// 4根据学号查找学生
-	public Asset findById(String sno);
+	public Asset findById(String ano);
 
 	// 5 查询所有
 	public List<Asset> findAll();
