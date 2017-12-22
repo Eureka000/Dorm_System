@@ -1,6 +1,6 @@
 package dm.biz;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import dm.vo.*;
@@ -8,13 +8,11 @@ import dm.vo.*;
 public interface CurfewBiz {
 	public boolean add(Curfew c);
 
-	public boolean delete(Curfew c);
+	public boolean delete(String Sno,String Tno,Date NightTime);
 
-	// 3 ÐÞ¸Ä²Æ²ú
-	public boolean update(Curfew c);
+	
 
-	// 4
-	public Curfew findById(Curfew c);
+	public Curfew findBySId(String Sno);
 
 
 	public List<Curfew> findAll();

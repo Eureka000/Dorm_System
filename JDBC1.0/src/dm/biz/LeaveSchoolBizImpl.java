@@ -3,7 +3,7 @@ package dm.biz;
 import java.util.Date;
 import java.util.List;
 
-import dm.Dao.LeaveSchoolDao;
+import dm.dao.LeaveSchoolDao;
 import dm.po.Asset;
 import dm.po.LeaveSchool;
 
