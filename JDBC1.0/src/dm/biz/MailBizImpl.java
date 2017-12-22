@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.MailDao;
+import dm.dao.MailDao;
 import dm.po.Mail;
 
 public class MailBizImpl implements MailBiz{
@@ -27,7 +27,7 @@ public class MailBizImpl implements MailBiz{
 
 
 	public boolean update(Mail m) {
-		String sql = "update Mail set Sno = ?, Marrive = ?, Maccept = ? whereMno = ?";
+		String sql = "update Mail set Sno = ?, Marrive = ?, Maccept = ? where Mno = ?";
 		Object[] params = {m.getSno(), m.getMarrive(), m.getMaccept(), m.getMno()};
 		return sdao.update(sql, params);
 	}
