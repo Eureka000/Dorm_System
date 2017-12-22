@@ -6,7 +6,7 @@ import java.util.List;
 import dm.dao.*;
 import dm.vo.Curfew;
 
-public class CurfewBizImpl {
+public class CurfewBizImpl implements CurfewBiz {
 	CurfewDao cdao = new CurfewDao(); //ÐÞ¸Ä6
 
 	
@@ -26,7 +26,7 @@ public class CurfewBizImpl {
 		}
 
 
-	public Curfew findBySID(String Sno) {
+	public Curfew findBySId(String Sno) {
 		String sql = "select * from Curfew where Sno = ?";
 		Object[] params = {Sno};
 		return (Curfew) cdao.get(sql, Curfew.class, params);

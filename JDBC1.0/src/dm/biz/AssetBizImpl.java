@@ -5,7 +5,7 @@ import java.util.List;
 import dm.dao.AssetDao;
 import dm.po.Asset;
 
-public class AssetBizImpl {
+public class AssetBizImpl implements AssetBiz{
 	//“˝»ÎDao
 	AssetDao adao = new AssetDao();
 

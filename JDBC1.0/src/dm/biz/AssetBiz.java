@@ -15,7 +15,7 @@ public interface AssetBiz {
 	public boolean update(Asset a);
 
 	// 4根据学号查找财产
-	public Asset findById(String Ano);
+	public Asset findByID(String Ano);
 
 	// 5 查询所有
 	public List<Asset> findAll();

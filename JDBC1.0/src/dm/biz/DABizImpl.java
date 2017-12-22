@@ -5,7 +5,7 @@ import java.util.List;
 import dm.dao.DADao;
 import dm.vo.DA;
 
-public class DABizImpl {
+public class DABizImpl implements DABiz{
 
 	DADao ddao = new DADao();
 	public boolean add(DA d) {

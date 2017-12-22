@@ -5,7 +5,7 @@ import java.util.List;
 import dm.dao.StudentDao;
 import dm.po.Student;
 
-public class StudentBizImpl {
+public class StudentBizImpl implements StudentBiz{
 	//“˝»ÎDao
 	StudentDao sdao = new StudentDao();
 
@@ -32,7 +32,7 @@ public class StudentBizImpl {
 		return sdao.update(sql, params);
 	}
 
-	public Student findByID(String Sno) {
+	public Student findById(String Sno) {
 		String sql = "select * from Student where Sno = ?";
 		Object[] params = {Sno};
 		return (Student) sdao.get(sql, Student.class, params);

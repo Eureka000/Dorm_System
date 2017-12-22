@@ -7,7 +7,7 @@ import java.util.List;
 import dm.dao.BuildingDao; // 修改5
 import dm.po.Building;
 
-public class BuildingBizImpl {
+public class BuildingBizImpl implements BuildingBiz{
 	//引入Dao
 	BuildingDao bdao = new BuildingDao(); //修改6
 
@@ -34,7 +34,7 @@ public class BuildingBizImpl {
 		return bdao.update(sql, params);
 	}
 
-	public Building findByID(int Bno) {
+	public Building findById(int Bno) {
 		String sql = "select * from Building where Bno = ?";
 		Object[] params = {Bno};
 		return (Building) bdao.get(sql, Building.class, params);

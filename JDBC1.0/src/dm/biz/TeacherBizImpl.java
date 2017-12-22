@@ -6,7 +6,7 @@ import dm.dao.TeacherDao;
 import dm.po.Teacher;
 
 
-public class TeacherBizImpl {
+public class TeacherBizImpl implements TeacherBiz{
 	//“˝»ÎDao
 	TeacherDao tdao = new TeacherDao();
 
@@ -33,7 +33,7 @@ public class TeacherBizImpl {
 		return tdao.update(sql, params);
 	}
 
-	public Teacher findByID(int Tno) {
+	public Teacher findById(int Tno) {
 		String sql = "select * from Teacher where Tno = ?";
 		Object[] params = {Tno};
 		return (Teacher) tdao.get(sql, Teacher.class, params);
