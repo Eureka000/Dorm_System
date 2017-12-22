@@ -3,7 +3,7 @@ package dm.biz;
 import java.util.Date;
 import java.util.List;
 
-import dm.Dao.LeaveSchoolDao;
+import dm.dao.LeaveSchoolDao;
 import dm.po.Asset;
 import dm.po.LeaveSchool;
 
@@ -40,7 +40,7 @@ public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
 
 
 	public LeaveSchool findById (String sno) {
-		String sql = "select * from Asset where Sno = ?";
+		String sql = "select * from LeaveSchool where Sno = ?";
 		Object[] params = {sno};
 		return (LeaveSchool) sdao.get(sql, Asset.class, params);
 	}
