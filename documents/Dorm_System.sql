@@ -116,3 +116,9 @@ create table DA
 );
 
 
+--创建用户表(User是关键字，不能用)
+create table Usser
+(Uno char(15) primary key,
+ Pswd char(20),
+ Id smallint
+ );

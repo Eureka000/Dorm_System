@@ -2,10 +2,10 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.dao.StudentDao;
+import dm.Dao.StudentDao;
 import dm.po.Student;
 
-public class StudentBizImpl {
+public class StudentBizImpl implements StudentBiz {
 	//“˝»ÎDao
 	StudentDao sdao = new StudentDao();
 
@@ -32,11 +32,6 @@ public class StudentBizImpl {
 		return sdao.update(sql, params);
 	}
 
-	public Student findByID(String Sno) {
-		String sql = "select * from Student where Sno = ?";
-		Object[] params = {Sno};
-		return (Student) sdao.get(sql, Student.class, params);
-	}
 
 	public List<Student> findAll() {
 		String sql = "select * from Student";
@@ -47,6 +42,14 @@ public class StudentBizImpl {
 		String sql = "select * from Student and concat(Sno, Sname, Ssex, Sdept) like ?";
 		Object[] params = {"%"+condition+"%"};
 		return sdao.query(sql, Student.class, params);
+	}
+
+
+	@Override
+	public Student findById(String sno) {
+		String sql = "select * from Student where Sno = ?";
+		Object[] params = {sno};
+		return (Student) sdao.get(sql, Student.class, params);
 	}
 
 }

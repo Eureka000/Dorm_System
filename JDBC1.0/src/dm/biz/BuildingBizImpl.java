@@ -2,20 +2,18 @@ package dm.biz;
 
 import java.util.List;
 
-
-
-import dm.dao.BuildingDao; // 修改5
+import dm.Dao.BuildingDao;
 import dm.po.Building;
 
-public class BuildingBizImpl {
+public class BuildingBizImpl implements BuildingBiz{
 	//引入Dao
-	BuildingDao bdao = new BuildingDao(); //修改6
+	BuildingDao bdao = new BuildingDao();
 
 	
-	public boolean add(Building b) { // 修改7
-		String sql = "insert into Building values(?,?,?)"; //修改8
+	public boolean add(Building b) {
+		String sql = "insert into Building values(?,?,?)";
 		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
-		Object[] params = {b.getBno(), b.getBblock(), b.getBtime()}; //修改9
+		Object[] params = {b.getBno(), b.getBblock(), b.getBtime()};
 		return bdao.update(sql, params);
 	}
 
@@ -34,11 +32,6 @@ public class BuildingBizImpl {
 		return bdao.update(sql, params);
 	}
 
-	public Building findByID(int Bno) {
-		String sql = "select * from Building where Bno = ?";
-		Object[] params = {Bno};
-		return (Building) bdao.get(sql, Building.class, params);
-	}
 
 	public List<Building> findAll() {
 		String sql = "select * from Building";
@@ -49,5 +42,13 @@ public class BuildingBizImpl {
 		String sql = "select * from Building and concat(Bno, Bblock, Btime) like ?";
 		Object[] params = {"%"+condition+"%"};
 		return bdao.query(sql, Building.class, params);
+	}
+
+
+	@Override
+	public Building findById(int Bno) {
+		String sql = "select * from Building where Bno = ?";
+		Object[] params = {Bno};
+		return (Building) bdao.get(sql, Building.class, params);
 	}
 }
