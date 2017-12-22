@@ -5,6 +5,10 @@ import java.util.List;
 import dm.Dao.TeacherDao;
 import dm.po.Teacher;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
 public class TeacherBizImpl implements TeacherBiz{
 	//“˝»ÎDao
 	TeacherDao sdao = new TeacherDao();
@@ -28,8 +32,19 @@ public class TeacherBizImpl implements TeacherBiz{
 
 	public boolean update(Teacher t) {
 		String sql = "update Teacher set Tname = ?, Tsex = ? where Tno = ?";
+<<<<<<< HEAD
 		Object[] params = {t.getTname(), t.getTsex(), t.getTno()};
 		return sdao.update(sql, params);
+=======
+		Object[] params = {t.getTname(), t.getTsex(),t.getTno()};
+		return tdao.update(sql, params);
+	}
+
+	public Teacher findById(int Tno) {
+		String sql = "select * from Teacher where Tno = ?";
+		Object[] params = {Tno};
+		return (Teacher) tdao.get(sql, Teacher.class, params);
+>>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
 	}
 
 	public List<Teacher> findAll() {

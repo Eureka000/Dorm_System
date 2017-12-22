@@ -4,7 +4,7 @@ import java.util.List;
 
 import dm.po.Building;
 
-public interface BuildingBiz {  // Why does have '?' in there?
+public interface BuildingBiz {  
 	// 1 Ôö¼ÓËŞÉáÂ¥
 	public boolean add(Building b);
 

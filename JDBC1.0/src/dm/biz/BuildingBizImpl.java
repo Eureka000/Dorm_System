@@ -32,6 +32,14 @@ public class BuildingBizImpl implements BuildingBiz{
 		return bdao.update(sql, params);
 	}
 
+<<<<<<< HEAD
+=======
+	public Building findById(int Bno) {
+		String sql = "select * from Building where Bno = ?";
+		Object[] params = {Bno};
+		return (Building) bdao.get(sql, Building.class, params);
+	}
+>>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
 
 	public List<Building> findAll() {
 		String sql = "select * from Building";
