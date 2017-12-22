@@ -7,11 +7,9 @@ import dm.vo.*;
 public interface DABiz {
 	public boolean add(DA d);
 
-	public boolean delete(DA d);
+	public boolean delete(String Dno,String Ano);
 
-	public boolean update(DA d);
-
-	public DA findById(DA d);
+	public DA findByDId(String Dno);
 
 	public List<DA> findAll();
 
