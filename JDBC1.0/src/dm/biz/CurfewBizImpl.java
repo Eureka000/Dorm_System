@@ -7,13 +7,13 @@ import dm.dao.*;
 import dm.vo.Curfew;
 
 public class CurfewBizImpl implements CurfewBiz {
-	CurfewDao cdao = new CurfewDao(); //修改6
+	CurfewDao cdao = new CurfewDao();
 
 	
-	public boolean add(Curfew c) { // 修改7
-		String sql = "insert into Curfew values(?,?,?,?,?)"; //修改8
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
-		Object[] params = {c.getSno(), c.getNightTime(), c.getNightReason(),c.getTno()}; //修改9
+	public boolean add(Curfew c) {
+		String sql = "insert into Curfew values(?,?,?,?,?)"; //锟睫革拷8
+
+		Object[] params = {c.getSno(), c.getNightTime(), c.getNightReason(),c.getTno()}; //锟睫革拷9
 		return cdao.update(sql, params);
 	}
 

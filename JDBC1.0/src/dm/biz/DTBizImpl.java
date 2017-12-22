@@ -11,7 +11,7 @@ public class DTBizImpl implements DTBiz {
 	public boolean add(DT d)
 	{		
 		String sql = "insert into DT values(?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {d.getBno(), d.getTno()};
 		return ddao.update(sql, params);
 		

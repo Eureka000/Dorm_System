@@ -8,13 +8,11 @@ import dm.po.Asset;
 import dm.po.LeaveSchool;
 
 public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
-	//引入Dao
 	LeaveSchoolDao sdao = new LeaveSchoolDao();
 
 	
 	public boolean add(LeaveSchool ls) {
 		String sql = "insert into LeaveSchool values(?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
 		Object[] params = {ls.getSno(), ls.getSltime(), ls.getSreturn()};
 		return sdao.update(sql, params);
 	}

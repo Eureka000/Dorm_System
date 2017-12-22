@@ -2,17 +2,17 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.AssetDao;
+import dm.dao.AssetDao;
 import dm.po.Asset;
 
 public class AssetBizImpl implements AssetBiz{
-	//引入Dao
+
 	AssetDao adao = new AssetDao();
 
 	
 	public boolean add(Asset a) {
 		String sql = "insert into Asset values(?,?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {a.getAno(), a.getAname(), a.getAprice(), a.getAstore()};
 		return adao.update(sql, params);
 	}
@@ -50,4 +50,6 @@ public class AssetBizImpl implements AssetBiz{
 		Object[] params = {Ano};
 		return (Asset) adao.get(sql, Asset.class, params);
 	}
+
+
 }

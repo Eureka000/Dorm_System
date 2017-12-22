@@ -2,17 +2,17 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.BuildingDao;
+import dm.dao.BuildingDao;
 import dm.po.Building;
 
 public class BuildingBizImpl implements BuildingBiz{
-	//引入Dao
+
 	BuildingDao bdao = new BuildingDao();
 
 	
 	public boolean add(Building b) {
 		String sql = "insert into Building values(?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {b.getBno(), b.getBblock(), b.getBtime()};
 		return bdao.update(sql, params);
 	}
@@ -32,15 +32,8 @@ public class BuildingBizImpl implements BuildingBiz{
 		return bdao.update(sql, params);
 	}
 
-<<<<<<< HEAD
-=======
-	public Building findById(int Bno) {
-		String sql = "select * from Building where Bno = ?";
-		Object[] params = {Bno};
-		return (Building) bdao.get(sql, Building.class, params);
-	}
->>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
 
+	
 	public List<Building> findAll() {
 		String sql = "select * from Building";
 		return bdao.query(sql, Building.class);

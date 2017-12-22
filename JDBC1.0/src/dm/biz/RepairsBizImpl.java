@@ -11,7 +11,7 @@ public class RepairsBizImpl implements RepairsBiz {
 	public boolean add(Repairs r)
 	{		
 		String sql = "insert into Repairs values(?,?,?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {r.getAno(), r.getDno(),r.getReportTime(),r.getReportReason(),r.getFixTime()};
 		return ddao.update(sql, params);
 		

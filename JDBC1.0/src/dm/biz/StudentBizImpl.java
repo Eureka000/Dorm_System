@@ -2,14 +2,11 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.StudentDao;
+import dm.dao.StudentDao;
 import dm.po.Student;
 
-<<<<<<< HEAD
-public class StudentBizImpl implements StudentBiz {
-=======
 public class StudentBizImpl implements StudentBiz{
->>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
+
 	//“˝»ÎDao
 	StudentDao sdao = new StudentDao();
 
@@ -36,14 +33,12 @@ public class StudentBizImpl implements StudentBiz{
 		return sdao.update(sql, params);
 	}
 
-<<<<<<< HEAD
-=======
 	public Student findById(String Sno) {
 		String sql = "select * from Student where Sno = ?";
 		Object[] params = {Sno};
 		return (Student) sdao.get(sql, Student.class, params);
 	}
->>>>>>> a86ed3f9aba6721054789a53a309665c7e0164c4
+
 
 	public List<Student> findAll() {
 		String sql = "select * from Student";
@@ -57,11 +52,5 @@ public class StudentBizImpl implements StudentBiz{
 	}
 
 
-	@Override
-	public Student findById(String sno) {
-		String sql = "select * from Student where Sno = ?";
-		Object[] params = {sno};
-		return (Student) sdao.get(sql, Student.class, params);
-	}
 
 }

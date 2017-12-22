@@ -6,13 +6,13 @@ import dm.dao.MailDao;
 import dm.po.Mail;
 
 public class MailBizImpl implements MailBiz{
-	//引入Dao
+
 	MailDao sdao = new MailDao();
 
 	
 	public boolean add(Mail m) {
 		String sql = "insert into Mail values(?,?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {m.getMno(), m.getSno(), m.getMarrive(), m.getMaccept()};
 		return sdao.update(sql, params);
 	}
