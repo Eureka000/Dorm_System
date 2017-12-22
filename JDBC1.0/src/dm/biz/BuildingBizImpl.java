@@ -2,22 +2,18 @@ package dm.biz;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import dm.dao.BuildingDao;
-=======
-import dm.Dao.BuildingDao; // 修改5
->>>>>>> 593805a39dc2aed1628b5816525e4fc801a46115
 import dm.po.Building;
 
 public class BuildingBizImpl {
 	//引入Dao
-	BuildingDao bdao = new BuildingDao(); //修改6
+	BuildingDao bdao = new BuildingDao();
 
 	
-	public boolean add(Building b) { // 修改7
-		String sql = "insert into Building values(?,?,?)"; //修改8
+	public boolean add(Building b) {
+		String sql = "insert into Building values(?,?,?)";
 		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
-		Object[] params = {b.getBno(), b.getBblock(), b.getBtime()}; //修改9
+		Object[] params = {b.getBno(), b.getBblock(), b.getBtime()};
 		return bdao.update(sql, params);
 	}
 
