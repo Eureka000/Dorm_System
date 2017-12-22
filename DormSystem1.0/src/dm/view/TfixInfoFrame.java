@@ -53,6 +53,11 @@ public class TfixInfoFrame extends javax.swing.JInternalFrame {
         btnCancel = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
