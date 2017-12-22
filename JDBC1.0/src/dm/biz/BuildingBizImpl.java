@@ -2,11 +2,9 @@ package dm.biz;
 
 import java.util.List;
 
-<<<<<<< HEAD
-import dm.dao.BuildingDao;
-=======
-import dm.Dao.BuildingDao; // ÐÞ¸Ä5
->>>>>>> 593805a39dc2aed1628b5816525e4fc801a46115
+
+
+import dm.dao.BuildingDao; // ÐÞ¸Ä5
 import dm.po.Building;
 
 public class BuildingBizImpl {

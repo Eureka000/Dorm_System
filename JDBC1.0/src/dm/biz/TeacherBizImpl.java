@@ -2,8 +2,9 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.TeacherDao;
+import dm.dao.TeacherDao;
 import dm.po.Teacher;
+
 
 public class TeacherBizImpl {
 	//ÒıÈëDao
