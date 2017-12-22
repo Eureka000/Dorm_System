@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.dao.AssetDao;
+import dm.Dao.AssetDao;
 import dm.po.Asset;
 
 public class AssetBizImpl implements AssetBiz{
@@ -32,12 +32,6 @@ public class AssetBizImpl implements AssetBiz{
 		return adao.update(sql, params);
 	}
 
-	public Asset findByID(String Ano) {
-		String sql = "select * from Asset where Ano = ?";
-		Object[] params = {Ano};
-		return (Asset) adao.get(sql, Asset.class, params);
-	}
-
 	public List<Asset> findAll() {
 		String sql = "select * from Asset";
 		return adao.query(sql, Asset.class);
@@ -47,5 +41,13 @@ public class AssetBizImpl implements AssetBiz{
 		String sql = "select * from Asset and concat(Ano, Aname, Aprice, Astore) like ?";
 		Object[] params = {"%"+condition+"%"};
 		return adao.query(sql, Asset.class, params);
+	}
+
+
+	@Override
+	public Asset findById(String Ano) {
+		String sql = "select * from Asset where Ano = ?";
+		Object[] params = {Ano};
+		return (Asset) adao.get(sql, Asset.class, params);
 	}
 }
