@@ -12,7 +12,7 @@ public interface CurfewBiz {
 
 	
 
-	public Curfew findBySId(String Sno);
+	public Curfew findById(String Sno);
 
 
 	public List<Curfew> findAll();

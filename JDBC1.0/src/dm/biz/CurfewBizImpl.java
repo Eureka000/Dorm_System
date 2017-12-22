@@ -26,7 +26,7 @@ public class CurfewBizImpl implements CurfewBiz {
 		}
 
 
-	public Curfew findBySId(String Sno) {
+	public Curfew findById(String Sno) {
 		String sql = "select * from Curfew where Sno = ?";
 		Object[] params = {Sno};
 		return (Curfew) cdao.get(sql, Curfew.class, params);
