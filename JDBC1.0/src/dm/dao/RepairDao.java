@@ -1,4 +1,4 @@
-package dm.Dao;
+package dm.dao;
 
 public class RepairDao extends BaseDao {
 

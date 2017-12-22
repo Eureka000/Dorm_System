@@ -1,4 +1,4 @@
-package dm.Dao;
+package dm.dao;
 
 import java.sql.*;
 import java.util.List;

@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.BuildingDao;
+import dm.dao.BuildingDao;
 import dm.po.Building;
 
 public class BuildingBizImpl {

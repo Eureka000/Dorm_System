@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.StudentDao;
+import dm.dao.StudentDao;
 import dm.po.Student;
 
 public class StudentBizImpl {

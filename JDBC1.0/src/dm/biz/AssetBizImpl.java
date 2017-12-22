@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.AssetDao;
+import dm.dao.AssetDao;
 import dm.po.Asset;
 
 public class AssetBizImpl {
