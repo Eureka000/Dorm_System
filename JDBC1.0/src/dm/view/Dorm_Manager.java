@@ -3,25 +3,29 @@ package dm.view;
 import java.util.Scanner;
 
 import dm.biz.StudentBizImpl;
+import dm.biz.UserBiz;
+import dm.biz.UserBizImpl;
 import dm.po.Student;
+import dm.po.User;
 
 public class Dorm_Manager {
 	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
-		StudentBizImpl sbiz = new StudentBizImpl();
-		
-		System.out.println("Á¬½Ó³É¹¦£¡");
-		System.out.println("ÊäÈëÒª²åÈëµÄÑ§ÉúÑ§ºÅ ĞÕÃû ĞÔ±ğ Äê¼¶ ÔºÏµ£º");
-
-		String Sno = sc.next();
-	    String Sname = sc.next();
-	    String Ssex = sc.next();
-		Integer Sgrade = sc.nextInt();
-	    String Sdept = sc.next();
-	    Student s = new Student(Sno, Sname, Ssex, Sgrade, Sdept);
-	    
-	    sbiz.add(s);
-	    
-	    System.out.println("Ìí¼Ó³É¹¦£¡");
+		UserBiz ubiz = new UserBizImpl();
+		System.out.println("è¯·è¾“å…¥ç”¨æˆ·åå’Œå¯†ç ï¼š");
+		String uno = sc.next();
+		String pass = sc.next();
+		User u = ubiz.findById(uno);
+		if(u==null){
+			System.out.println("ç”¨æˆ·åä¸å­˜åœ¨ï¼");
+		}
+		else {
+			if(u.getPass().trim().equals(pass))
+				System.out.println("lalala");
+			else{
+				
+				
+			}
+		}
 	}
 }

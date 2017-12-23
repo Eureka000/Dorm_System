@@ -146,7 +146,7 @@ public class LoginFrame extends javax.swing.JFrame {
         String uno = this.name.getText().trim();
         char[] pswd = this.password.getPassword();
         String password = new String(pswd);
-        //调用业务�?
+
         //非空验证
         if(StringUtil.checkLength(uno) == false){
             JOptionPane.showMessageDialog(this, "用户名不能为空！");
@@ -166,7 +166,7 @@ public class LoginFrame extends javax.swing.JFrame {
             return;              
         }
         else{
-            if(user.getPass().equals(password)){   
+            if(user.getPass().trim().equals(password)){   
                 if(this.box.getSelectedIndex()==0 && user.getPri()==0){
                     TeacherFrame tf = new TeacherFrame();
                     tf.setVisible(true);

@@ -25,21 +25,21 @@ public class UserBizImpl implements UserBiz {
 
 	@Override
 	public User findById(String uno) {
-		String sql = "select * from User where uno = ?";
+		String sql = "select * from Users where Uno = ?";
 		Object[] params = {uno};
 		return (User) udao.get(sql, User.class, params);
 	}
 
 	@Override
 	public boolean delete(String uno) {
-		String sql = "delete from User where Uno = ?";
+		String sql = "delete from Users where Uno = ?";
 		Object[] params = {uno};
 		return udao.update(sql, params);
 	}
 
 	@Override
 	public List<User> findAll() {
-		String sql = "select * from User";
+		String sql = "select * from Users";
 		return udao.query(sql, User.class);
 	}
 

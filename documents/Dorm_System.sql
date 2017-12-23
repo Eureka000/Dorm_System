@@ -13,13 +13,13 @@ drop table Student;
 drop table Users;
 
 
---´´½¨User±í
+--åˆ›å»ºUserè¡¨
 create table Users
-(Uno char(11) primary key,	--ÓÃ»§Ãû
- Pass char(20) not null,	--ÃÜÂë
- Pri char(1)				--È¨ÏŞ£¨0ÎªÑ§Éú£¬1ÎªÀÏÊ¦£©
+(Uno char(11) primary key,	--ç”¨æˆ·å
+ Pass char(20) not null,	--å¯†ç 
+ Pri char(1)				--æƒé™ï¼ˆ0ä¸ºå­¦ç”Ÿï¼Œ1ä¸ºè€å¸ˆï¼‰
 );
---¶ÔPriÌí¼ÓcheckÔ¼Êø
+--å¯¹Priæ·»åŠ checkçº¦æŸ
 alter table Users
 add constraint CK_Pri check(Pri='1' or Pri='0');
 
@@ -73,7 +73,7 @@ insert into Users values('15090032013','15090032013','0');
 insert into Users values('16090012014','16090012014','0');
 insert into Users values('17090011045','17090011045','0');
 
---´´½¨Student£¨Ñ§Éú£©±í
+--åˆ›å»ºStudentï¼ˆå­¦ç”Ÿï¼‰è¡¨
 create table Student
 (Sno char(11) primary key,
  Sname char(20) not null,
@@ -81,73 +81,73 @@ create table Student
  Sgrade smallint,
  Sdept char(20)
 );
---¶ÔSsexºÍSageÌí¼ÓcheckÔ¼Êø
+--å¯¹Ssexå’ŒSageæ·»åŠ checkçº¦æŸ
 alter table Student
-add constraint CK_Ssex check(Ssex='Å®' or Ssex='ÄĞ');
+add constraint CK_Ssex check(Ssex='å¥³' or Ssex='ç”·');
 
-insert into Student values('14010011001','°²³½','Å®',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010011002','°²ç÷','Å®',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010011003','³ÂÓî','Å®',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010022001','³Â¼ÑÓñ','Å®',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010022002','¶­«h','Å®',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010022003','¶¡Ç¿','ÄĞ',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14010022004','ÀîÓÂ','ÄĞ',2014,'º£Ñó»·¾³Ñ§Ôº');
-insert into Student values('14020011012','Áº·Ç·²','ÄĞ',2014,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('14020011013','½¯Ø©','ÄĞ',2014,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020012001','¹Ë·É','ÄĞ',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020011033','Õ²ÓÀĞñ','ÄĞ',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('14020031015','ÍõÃô','Å®',2014,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('16020041002','³Â¶¬','Å®',2016,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('17020023005','Àîéª','Å®',2017,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020032010','ÁõÔ¨³¿','Å®',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020032009','ÁõÒÕÓï','Å®',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020031042','Áõ·å','ÄĞ',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020031048','ÁõÕæ','ÄĞ',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15020031108','ÕÅÇìÓå','ÄĞ',2015,'ĞÅÏ¢¿ÆÑ§Óë¹¤³ÌÑ§Ôº');
-insert into Student values('15110041008','ÀîÔÃ','Å®',2015,'¹ÜÀíÑ§Ôº');
-insert into Student values('15110011002','³ÂÔóöÎ','ÄĞ',2015,'¹ÜÀíÑ§Ôº');
-insert into Student values('16110022037','ĞìË§','ÄĞ',2016,'¹ÜÀíÑ§Ôº');
-insert into Student values('14120011028','ÕÅÁèÔÆ','ÄĞ',2014,'¾­¼ÃÑ§Ôº');
-insert into Student values('15120012009','Îâ·å','ÄĞ',2015,'¾­¼ÃÑ§Ôº');
-insert into Student values('16120013011','°×Ñ©','Å®',2016,'¾­¼ÃÑ§Ôº');
-insert into Student values('16120013013','½­ºÆ','ÄĞ',2016,'¾­¼ÃÑ§Ôº');
-insert into Student values('17120014011','ÉòÉî','ÄĞ',2017,'¾­¼ÃÑ§Ôº');
-insert into Student values('14090021027','ÀîÈ»','ÄĞ',2014,'¹¤³ÌÑ§Ôº');
-insert into Student values('14090021001','ÂŞÁÁ','ÄĞ',2014,'¹¤³ÌÑ§Ôº');
-insert into Student values('15090032010','ÕÅÁ¢','ÄĞ',2015,'¹¤³ÌÑ§Ôº');
-insert into Student values('15090032013','Áõ·«','ÄĞ',2015,'¹¤³ÌÑ§Ôº');
-insert into Student values('16090012014','ÁÖÅµ','Å®',2016,'¹¤³ÌÑ§Ôº');
-insert into Student values('17090011045','ÕÅ±ù½à','Å®',2017,'¹¤³ÌÑ§Ôº');
+insert into Student values('14010011001','å®‰è¾°','å¥³',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010011002','å®‰çª','å¥³',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010011003','é™ˆå®‡','å¥³',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010022001','é™ˆä½³ç‰','å¥³',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010022002','è‘£ç¥','å¥³',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010022003','ä¸å¼º','ç”·',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14010022004','æå‹‡','ç”·',2014,'æµ·æ´‹ç¯å¢ƒå­¦é™¢');
+insert into Student values('14020011012','æ¢éå‡¡','ç”·',2014,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('14020011013','è’‹ä¸','ç”·',2014,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020012001','é¡¾é£','ç”·',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020011033','è©¹æ°¸æ—­','ç”·',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('14020031015','ç‹æ•','å¥³',2014,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('16020041002','é™ˆå†¬','å¥³',2016,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('17020023005','ææ¥ ','å¥³',2017,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020032010','åˆ˜æ¸Šæ™¨','å¥³',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020032009','åˆ˜è‰ºè¯­','å¥³',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020031042','åˆ˜å³°','ç”·',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020031048','åˆ˜çœŸ','ç”·',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15020031108','å¼ åº†æ¸','ç”·',2015,'ä¿¡æ¯ç§‘å­¦ä¸å·¥ç¨‹å­¦é™¢');
+insert into Student values('15110041008','ææ‚¦','å¥³',2015,'ç®¡ç†å­¦é™¢');
+insert into Student values('15110011002','é™ˆæ³½é‘«','ç”·',2015,'ç®¡ç†å­¦é™¢');
+insert into Student values('16110022037','å¾å¸…','ç”·',2016,'ç®¡ç†å­¦é™¢');
+insert into Student values('14120011028','å¼ å‡Œäº‘','ç”·',2014,'ç»æµå­¦é™¢');
+insert into Student values('15120012009','å´å³°','ç”·',2015,'ç»æµå­¦é™¢');
+insert into Student values('16120013011','ç™½é›ª','å¥³',2016,'ç»æµå­¦é™¢');
+insert into Student values('16120013013','æ±Ÿæµ©','ç”·',2016,'ç»æµå­¦é™¢');
+insert into Student values('17120014011','æ²ˆæ·±','ç”·',2017,'ç»æµå­¦é™¢');
+insert into Student values('14090021027','æç„¶','ç”·',2014,'å·¥ç¨‹å­¦é™¢');
+insert into Student values('14090021001','ç½—äº®','ç”·',2014,'å·¥ç¨‹å­¦é™¢');
+insert into Student values('15090032010','å¼ ç«‹','ç”·',2015,'å·¥ç¨‹å­¦é™¢');
+insert into Student values('15090032013','åˆ˜å¸†','ç”·',2015,'å·¥ç¨‹å­¦é™¢');
+insert into Student values('16090012014','æ—è¯º','å¥³',2016,'å·¥ç¨‹å­¦é™¢');
+insert into Student values('17090011045','å¼ å†°æ´','å¥³',2017,'å·¥ç¨‹å­¦é™¢');
 
 
---´´½¨Teacher£¨½ÌÊ¦£©±í
+--åˆ›å»ºTeacherï¼ˆæ•™å¸ˆï¼‰è¡¨
 create table Teacher
 (Tno char(11) primary key,
  Tname char(20) not null,
  Tsex char(2)
 );
---¶ÔTsexÌí¼ÓcheckÔ¼Êø
+--å¯¹Tsexæ·»åŠ checkçº¦æŸ
 alter table Teacher
-add constraint CK_Tsex check(Tsex='Å®' or Tsex='ÄĞ');
+add constraint CK_Tsex check(Tsex='å¥³' or Tsex='ç”·');
 
-insert into Teacher values('2110','ÕÔ·ï½¿','Å®');
-insert into Teacher values('2111','ËÕÀö','Å®');
-insert into Teacher values('2120','Áõ½Ü','ÄĞ');
-insert into Teacher values('2121','ÇÇ³ş','ÄĞ');
-insert into Teacher values('2122','ÍõÃ÷','ÄĞ');
-insert into Teacher values('2130','ÎäÇ¿','ÄĞ');
-insert into Teacher values('2131','³ÌÏş','ÄĞ');
-insert into Teacher values('2240','ÕÔæÃ','Å®');
-insert into Teacher values('2241','ÄşÂ¶','Å®');
-insert into Teacher values('2250','²Üçù','ÄĞ');
-insert into Teacher values('2251','ËïÇ¿','ÄĞ');
-insert into Teacher values('2360','Â¬Àò','Å®');
-insert into Teacher values('2361','ÎÄĞÀ','Å®');
-insert into Teacher values('2370','¸ßÕ¹','ÄĞ');
-insert into Teacher values('2371','°×ÔÆ','ÄĞ');
-insert into Teacher values('2372','ËïÏş±ó','ÄĞ');
+insert into Teacher values('2110','èµµå‡¤å¨‡','å¥³');
+insert into Teacher values('2111','è‹ä¸½','å¥³');
+insert into Teacher values('2120','åˆ˜æ°','ç”·');
+insert into Teacher values('2121','ä¹”æ¥š','ç”·');
+insert into Teacher values('2122','ç‹æ˜','ç”·');
+insert into Teacher values('2130','æ­¦å¼º','ç”·');
+insert into Teacher values('2131','ç¨‹æ™“','ç”·');
+insert into Teacher values('2240','èµµå©·','å¥³');
+insert into Teacher values('2241','å®éœ²','å¥³');
+insert into Teacher values('2250','æ›¹ç¦','ç”·');
+insert into Teacher values('2251','å­™å¼º','ç”·');
+insert into Teacher values('2360','å¢è‰','å¥³');
+insert into Teacher values('2361','æ–‡æ¬£','å¥³');
+insert into Teacher values('2370','é«˜å±•','ç”·');
+insert into Teacher values('2371','ç™½äº‘','ç”·');
+insert into Teacher values('2372','å­™æ™“æ–Œ','ç”·');
 
---´´½¨Dormitory£¨ËŞÉá£©±í
+--åˆ›å»ºDormitoryï¼ˆå®¿èˆï¼‰è¡¨
 create table Dormitory
 (Dno char(6) primary key,
  dtel char(20) not null,
@@ -171,7 +171,7 @@ insert into Dormitory values('7#101','6007101');
 insert into Dormitory values('7#102','6007102');
 
 
---´´½¨Asset£¨²Æ²ú£©±í
+--åˆ›å»ºAssetï¼ˆè´¢äº§ï¼‰è¡¨
 create table Asset
 (Ano char(3) primary key,
  Aname char(20) not null,
@@ -179,34 +179,34 @@ create table Asset
  Astore int
 );
 
-insert into Asset values('1','´²',2000,120);
-insert into Asset values('2','×À×Ó',1500,100);
-insert into Asset values('3','ÒÂ¹ñ',1800,120);
-insert into Asset values('4','µçµÆ',60,200);
-insert into Asset values('5','²£Á§',130,140);
-insert into Asset values('6','ÃÅ',1600,50);
-insert into Asset values('7','¹«¹²Ï´ÒÂ»ú',2500,4);
-insert into Asset values('8','¹«¹²´µ·ç»ú',70,15);
+insert into Asset values('1','åºŠ',2000,120);
+insert into Asset values('2','æ¡Œå­',1500,100);
+insert into Asset values('3','è¡£æŸœ',1800,120);
+insert into Asset values('4','ç”µç¯',60,200);
+insert into Asset values('5','ç»ç’ƒ',130,140);
+insert into Asset values('6','é—¨',1600,50);
+insert into Asset values('7','å…¬å…±æ´—è¡£æœº',2500,4);
+insert into Asset values('8','å…¬å…±å¹é£æœº',70,15);
 
---´´½¨Building£¨ËŞÉáÂ¥£©±í
+--åˆ›å»ºBuildingï¼ˆå®¿èˆæ¥¼ï¼‰è¡¨
 create table Building
 (Bno char(2) primary key,
  Bblock char(6) not null,
  Btime time not null
 );
---¶ÔBblockÌí¼ÓcheckÔ¼Êø
+--å¯¹Bblockæ·»åŠ checkçº¦æŸ
 alter table Building
-add constraint CK_Bblock check(Bblock='±±º£Ô·' or Bblock='¶«º£Ô·' or Bblock='ÄÏº£Ô·');
+add constraint CK_Bblock check(Bblock='åŒ—æµ·è‹‘' or Bblock='ä¸œæµ·è‹‘' or Bblock='å—æµ·è‹‘');
 
-insert into Building values('1','±±º£Ô·','22:30:00');
-insert into Building values('2','±±º£Ô·','22:30:00');
-insert into Building values('3','±±º£Ô·','22:30:00');
-insert into Building values('4','¶«º£Ô·','22:45:00');
-insert into Building values('5','¶«º£Ô·','22:45:00');
-insert into Building values('6','ÄÏº£Ô·','22:45:00');
-insert into Building values('7','ÄÏº£Ô·','22:45:00');
+insert into Building values('1','åŒ—æµ·è‹‘','22:30:00');
+insert into Building values('2','åŒ—æµ·è‹‘','22:30:00');
+insert into Building values('3','åŒ—æµ·è‹‘','22:30:00');
+insert into Building values('4','ä¸œæµ·è‹‘','22:45:00');
+insert into Building values('5','ä¸œæµ·è‹‘','22:45:00');
+insert into Building values('6','å—æµ·è‹‘','22:45:00');
+insert into Building values('7','å—æµ·è‹‘','22:45:00');
 
---´´½¨LeaveSchool£¨Ñ§ÉúÀëĞ££©±í
+--åˆ›å»ºLeaveSchoolï¼ˆå­¦ç”Ÿç¦»æ ¡ï¼‰è¡¨
 create table LeaveSchool
 (Sno char(11),
  Sltime date,
@@ -236,7 +236,7 @@ insert into LeaveSchool values('15020031108','2016-7-20','2016-8-12');
 insert into LeaveSchool values('15020031108','2017-1-19','2017-2-27');
 insert into LeaveSchool values('15020031108','2017-7-13','2017-8-18');
 
---´´½¨Mail£¨ĞÅ¼şÊÕ·¢£©±í
+--åˆ›å»ºMailï¼ˆä¿¡ä»¶æ”¶å‘ï¼‰è¡¨
 create table Mail
 (Mno char(20) primary key,
  Sno char(11),
@@ -266,7 +266,7 @@ insert into Mail values('M18','15020031108','2015-12-1','2015-12-2');
 insert into Mail values('M19','15020031108','2016-5-6','2016-5-8');
 insert into Mail values('M20','15020031108','2018-1-12',null);
 
---´´½¨Curfew£¨Ò¹¹é¹ØÏµ£©±í
+--åˆ›å»ºCurfewï¼ˆå¤œå½’å…³ç³»ï¼‰è¡¨
 create table Curfew
 (Sno char(11),
  NightTime datetime,
@@ -277,18 +277,18 @@ create table Curfew
  foreign key(Tno) references Teacher(Tno)
 );
 
-insert into Curfew values('15020032010','2016-11-11 22:45:00','ÉçÍÅ»î¶¯','2110');
-insert into Curfew values('15020032010','2017-11-11 22:45:00','ÉçÍÅ»î¶¯',null);
-insert into Curfew values('15020032009','2016-10-7 23:30:00','»Ø¼Ò·µĞ£','2111');
-insert into Curfew values('15020032009','2017-5-3 23:30:00','ÉçÍÅ»î¶¯',null);
-insert into Curfew values('15020031042','2016-1-1 22:45:00','ÉçÍÅ»î¶¯','2121');
-insert into Curfew values('15020031042','2016-11-11 22:45:00','ÉçÍÅ»î¶¯',null);
-insert into Curfew values('15020031048','2015-12-11 22:45:00','ÍâĞ£±ÈÈü·µĞ£','2120');
-insert into Curfew values('15020031048','2016-11-11 22:45:00','ÉçÍÅ»î¶¯',null);
-insert into Curfew values('15020031108','2016-9-16 23:30:00','ÊµÏ°·µĞ£','2121');
-insert into Curfew values('15020031108','2016-11-11 22:45:00','ÉçÍÅ»î¶¯',null);
+insert into Curfew values('15020032010','2016-11-11 22:45:00','ç¤¾å›¢æ´»åŠ¨','2110');
+insert into Curfew values('15020032010','2017-11-11 22:45:00','ç¤¾å›¢æ´»åŠ¨',null);
+insert into Curfew values('15020032009','2016-10-7 23:30:00','å›å®¶è¿”æ ¡','2111');
+insert into Curfew values('15020032009','2017-5-3 23:30:00','ç¤¾å›¢æ´»åŠ¨',null);
+insert into Curfew values('15020031042','2016-1-1 22:45:00','ç¤¾å›¢æ´»åŠ¨','2121');
+insert into Curfew values('15020031042','2016-11-11 22:45:00','ç¤¾å›¢æ´»åŠ¨',null);
+insert into Curfew values('15020031048','2015-12-11 22:45:00','å¤–æ ¡æ¯”èµ›è¿”æ ¡','2120');
+insert into Curfew values('15020031048','2016-11-11 22:45:00','ç¤¾å›¢æ´»åŠ¨',null);
+insert into Curfew values('15020031108','2016-9-16 23:30:00','å®ä¹ è¿”æ ¡','2121');
+insert into Curfew values('15020031108','2016-11-11 22:45:00','ç¤¾å›¢æ´»åŠ¨',null);
 
---´´½¨Repairs£¨±¨ĞŞ¹ØÏµ£©±í
+--åˆ›å»ºRepairsï¼ˆæŠ¥ä¿®å…³ç³»ï¼‰è¡¨
 create table Repairs
 (Dno char(6),
  Ano char(3),
@@ -300,18 +300,18 @@ create table Repairs
  foreign key(Dno) references Dormitory(Dno)
 );
 
-insert into Repairs values('1#101','2','2016-11-30','³éÌë»µµôÈÇ','2016-12-1');
-insert into Repairs values('1#101','4','2017-12-25','µÆ²»ÁÁÈÇ',null);
-insert into Repairs values('1#102','7','2016-10-20','Ï´ÒÂ»ú²»¹¤×÷ÈÇ','2016-10-22');
-insert into Repairs values('1#102','6','2017-12-30','ÃÅ°Ñ»µÈÇ',null);
-insert into Repairs values('2#101','3','2015-9-30','ÒÂ¹ñÃÅ»µµôÈÇ','2015-10-8');
-insert into Repairs values('2#101','5','2018-1-3','´°»§²£Á§ÆÆÈÇ',null);
-insert into Repairs values('2#102','4','2015-12-11','µÆ²»ÁÁÈÇ','2015-12-12');
-insert into Repairs values('2#102','8','2017-11-11','´µ·ç»ú»µÈÇ',null);
-insert into Repairs values('2#103','1','2015-9-19','´²°å»µÈÇ','2015-9-19');
-insert into Repairs values('2#103','7','2017-12-11 22:45:00','Ï´ÒÂ»ú²»¹¤×÷ÈÇ',null);
+insert into Repairs values('1#101','2','2016-11-30','æŠ½å±‰åæ‰æƒ¹','2016-12-1');
+insert into Repairs values('1#101','4','2017-12-25','ç¯ä¸äº®æƒ¹',null);
+insert into Repairs values('1#102','7','2016-10-20','æ´—è¡£æœºä¸å·¥ä½œæƒ¹','2016-10-22');
+insert into Repairs values('1#102','6','2017-12-30','é—¨æŠŠåæƒ¹',null);
+insert into Repairs values('2#101','3','2015-9-30','è¡£æŸœé—¨åæ‰æƒ¹','2015-10-8');
+insert into Repairs values('2#101','5','2018-1-3','çª—æˆ·ç»ç’ƒç ´æƒ¹',null);
+insert into Repairs values('2#102','4','2015-12-11','ç¯ä¸äº®æƒ¹','2015-12-12');
+insert into Repairs values('2#102','8','2017-11-11','å¹é£æœºåæƒ¹',null);
+insert into Repairs values('2#103','1','2015-9-19','åºŠæ¿åæƒ¹','2015-9-19');
+insert into Repairs values('2#103','7','2017-12-11 22:45:00','æ´—è¡£æœºä¸å·¥ä½œæƒ¹',null);
 
---´´½¨SD£¨Ñ§ÉúËŞÉá¹ØÏµ£©±í
+--åˆ›å»ºSDï¼ˆå­¦ç”Ÿå®¿èˆå…³ç³»ï¼‰è¡¨
 create table SD
 (Sno char(11),
  Dno char(6),
@@ -356,7 +356,7 @@ insert into SD values('16090012014','1#103','2016-8-25');
 insert into SD values('17090011045','1#103','2017-8-25');
 
 
---´´½¨DT£¨ËŞÉá¹ÜÀí¹ØÏµ£©±í
+--åˆ›å»ºDTï¼ˆå®¿èˆç®¡ç†å…³ç³»ï¼‰è¡¨
 create table DT
 (Bno char(2),
  Tno char(11),
@@ -383,7 +383,7 @@ insert into DT values('7','2371');
 insert into DT values('7','2372');
 
 
---´´½¨DA£¨ËŞÉá²Æ²ú¹ØÏµ£©±í
+--åˆ›å»ºDAï¼ˆå®¿èˆè´¢äº§å…³ç³»ï¼‰è¡¨
 create table DA
 (Dno char(6),
  Ano char(3),
