@@ -30,9 +30,6 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         jPanel2 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -46,9 +43,6 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         buttonSearch = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
         btnLoad = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
@@ -72,32 +66,17 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-<<<<<<< HEAD
                 "学号", "姓名", "性别", "年级", "院系", "宿舍号"
-=======
-<<<<<<< HEAD
-                "学号", "姓名", "性别", "年级", "院系"
-=======
-                "学号", "姓名", "性别", "年级", "院系", "宿舍号"
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
         jTextField2.setText("jTextField2");
 
         jButton1.setText("jButton1");
@@ -183,8 +162,7 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
         );
 
         buttonSearch.setText("查询");
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
+
         btnLoad.setText("载入");
 
         btnSave.setText("修改/保存");
@@ -221,18 +199,11 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                 txtSdeptActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 674, Short.MAX_VALUE)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -241,8 +212,6 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(buttonSearch)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -253,10 +222,8 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                             .addComponent(jLabel1))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtSname)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtSgrade, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(txtSname, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(txtSgrade, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,10 +240,7 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtSsex, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel2))
                         .addGap(151, 151, 151))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
@@ -291,21 +255,13 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                                 .addComponent(txtSdept, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(38, 38, 38)
                         .addComponent(btnCancel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addComponent(btnQuit)
                         .addGap(44, 44, 44))))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonSearch)
@@ -313,17 +269,12 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
-                .addGap(53, 53, 53)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(80, 80, 80)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtSno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -345,25 +296,13 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
                     .addComponent(btnQuit)
                     .addComponent(btnAdd))
                 .addGap(33, 33, 33))
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
-<<<<<<< HEAD
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 698, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,9 +320,12 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnLoad;
+    private javax.swing.JButton btnQuit;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton buttonSearch;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -391,47 +333,26 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnLoad;
-    private javax.swing.JButton btnQuit;
-    private javax.swing.JButton btnSave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-=======
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
     private javax.swing.JTextField txtSdept;
     private javax.swing.JTextField txtSgrade;
     private javax.swing.JTextField txtSname;
     private javax.swing.JTextField txtSno;
     private javax.swing.JTextField txtSsex;
-<<<<<<< HEAD
-=======
->>>>>>> 2836d3a8d6b4ad2a195876e25c1ee140e17ab37c
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
     // End of variables declaration//GEN-END:variables
 }
