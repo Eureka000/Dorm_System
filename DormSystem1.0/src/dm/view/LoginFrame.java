@@ -13,7 +13,7 @@ import dm.util.StringUtil;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * 
  * @author LIUYIYU
  */
 public class LoginFrame extends javax.swing.JFrame {
@@ -168,13 +168,14 @@ public class LoginFrame extends javax.swing.JFrame {
         else{
             if(user.getPass().trim().equals(password)){   
                 if(this.box.getSelectedIndex()==0 && user.getPri()==0){
-                    TeacherFrame tf = new TeacherFrame();
-                    tf.setVisible(true);
-                    this.dispose(); //关闭登录界面
-                }
-                else if(this.box.getSelectedIndex()==1 && user.getPri()==1){
                     StudentFrame sf = new StudentFrame();
                     sf.setVisible(true);
+                    this.dispose(); //关闭登录界面
+                    
+                }
+                else if(this.box.getSelectedIndex()==1 && user.getPri()==1){
+                    TeacherFrame tf = new TeacherFrame();
+                    tf.setVisible(true);
                     this.dispose(); //关闭登录界面
                 }
                 else {
