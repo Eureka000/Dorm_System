@@ -17,7 +17,7 @@ public interface CurfewBiz {
 
 	public List<Curfew> findAll();
 
-	// 6 Ä£ºý²éÑ¯
+	// 6 æ¨¡ç³ŠæŸ¥è¯¢
 	public List<Curfew> findByCondition(String condition);
 
 }

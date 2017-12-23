@@ -10,7 +10,7 @@ public class SDBizImpl implements SDBiz {
 	public boolean add(SD s)
 	{		
 		String sql = "insert into DA values(?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {s.getSno(), s.getDno(),s.getScin()};
 		return sdao.update(sql, params);
 		

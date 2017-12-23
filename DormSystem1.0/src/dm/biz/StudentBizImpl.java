@@ -5,7 +5,6 @@ import java.util.List;
 import dm.dao.StudentDao;
 import dm.po.Student;
 
-
 public class StudentBizImpl implements StudentBiz{
 
 	StudentDao sdao = new StudentDao();
@@ -32,6 +31,13 @@ public class StudentBizImpl implements StudentBiz{
 		return sdao.update(sql, params);
 	}
 
+	public Student findById(String Sno) {
+		String sql = "select * from Student where Sno = ?";
+		Object[] params = {Sno};
+		return (Student) sdao.get(sql, Student.class, params);
+	}
+
+
 	public List<Student> findAll() {
 		String sql = "select * from Student";
 		return sdao.query(sql, Student.class);
@@ -44,11 +50,5 @@ public class StudentBizImpl implements StudentBiz{
 	}
 
 
-	@Override
-	public Student findById(String sno) {
-		String sql = "select * from Student where Sno = ?";
-		Object[] params = {sno};
-		return (Student) sdao.get(sql, Student.class, params);
-	}
 
 }

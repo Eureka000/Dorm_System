@@ -7,24 +7,21 @@ import dm.po.Student;
 
 public class StudentBizImpl implements StudentBiz{
 
-	//引入Dao
 	StudentDao sdao = new StudentDao();
 
 	
 	public boolean add(Student s) {
 		String sql = "insert into Student values(?,?,?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
 		Object[] params = {s.getSno(), s.getSname(), s.getSsex(), s.getSgrade(), s.getSdept()};
 		return sdao.update(sql, params);
 	}
 
 
 	public boolean delete(String Sno) {
-
 		String sql = "delete from Student where Sno = ?";
 		Object[] params = {Sno};
 		return sdao.update(sql, params);
-		}
+	}
 
 
 	public boolean update(Student s) {

@@ -5,6 +5,9 @@
  */
 package dm.view;
 
+import dm.biz.UserBiz;
+import dm.biz.UserBizImpl;
+import dm.po.User;
 import dm.util.LocationUtil;
 import dm.util.StringUtil;
 import javax.swing.JOptionPane;
@@ -15,7 +18,8 @@ import javax.swing.JOptionPane;
  */
 public class LoginFrame extends javax.swing.JFrame {
 
-    
+    //引入biz
+    UserBiz ubiz = new UserBizImpl();  
     public LoginFrame() {
         initComponents();
         LocationUtil.setScreenCenter(this); //窗口居中
@@ -37,14 +41,14 @@ public class LoginFrame extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         login = new javax.swing.JButton();
         newpass = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        box = new javax.swing.JComboBox();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("�û�����");
+        label1.setText("用户名：");
 
-        label2.setText("�� �룺");
+        label2.setText("密 码：");
 
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,18 +56,18 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
 
-        login.setText("��¼");
+        login.setText("登录");
         login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
             }
         });
 
-        newpass.setText("�޸�����");
+        newpass.setText("修改密码");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ѧ��", "��ʦ" }));
+        box.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "学生", "教师" }));
 
-        jLabel1.setText("��ݣ�");
+        jLabel1.setText("身份：");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,7 +89,7 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addComponent(jLabel1))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(59, 59, 59))
@@ -103,7 +107,7 @@ public class LoginFrame extends javax.swing.JFrame {
                     .addComponent(label2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -139,39 +143,49 @@ public class LoginFrame extends javax.swing.JFrame {
     private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
         // 登录
         //获取用户名和密码
-        String usname = this.name.getText().trim();
+        String uno = this.name.getText().trim();
         char[] pswd = this.password.getPassword();
         String password = new String(pswd);
         //调用业务�?
         //非空验证
-        if(StringUtil.checkLength(usname) == false){
+        if(StringUtil.checkLength(uno) == false){
             JOptionPane.showMessageDialog(this, "用户名不能为空！");
             return;
         }
         if(StringUtil.checkLength(password) == false){
-            JOptionPane.showMessageDialog(this, "密码不能为空�?");
+            JOptionPane.showMessageDialog(this, "密码不能为空！");
             return;
         }
-        验证用户名是否存在
-        User newu = ubiz.userlogin(usname,password);
-        User user = ubiz.findByUsname(usname);
+        
+        //验证用户名是否存在
+        User user = ubiz.findById(uno);
         if(user == null){
-            JOptionPane.showMessageDialog(this, "用户名不存在�?");
+            JOptionPane.showMessageDialog(this, "用户不存在！");
             //清空面板信息
             clearInput();
             return;              
         }
         else{
-            if(user.getPswd().equals(password)){   
-                // 打开主界面，并将登录对象传�?�给主界�?
-                // 先传�?
-                MainFrame.user = user;
-                MainFrame mf = new MainFrame();
-                mf.setVisible(true);
-                this.dispose(); //关闭登录界面
+            if(user.getPass().equals(password)){   
+                if(this.box.getSelectedIndex()==0 && user.getPri()==0){
+                    TeacherFrame tf = new TeacherFrame();
+                    tf.setVisible(true);
+                    this.dispose(); //关闭登录界面
+                }
+                else if(this.box.getSelectedIndex()==1 && user.getPri()==1){
+                    StudentFrame sf = new StudentFrame();
+                    sf.setVisible(true);
+                    this.dispose(); //关闭登录界面
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "权限错误！");  
+                    this.password.setText("");
+                    return;
+                }
+                
             }
             else{
-                JOptionPane.showMessageDialog(this, "密码错误�?");  
+                JOptionPane.showMessageDialog(this, "密码错误！");  
                 this.password.setText("");
                 return;
             }
@@ -220,7 +234,7 @@ public class LoginFrame extends javax.swing.JFrame {
     } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox box;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel label1;

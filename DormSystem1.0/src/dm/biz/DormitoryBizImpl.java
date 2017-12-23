@@ -6,13 +6,13 @@ import dm.dao.DormitoryDao;
 import dm.po.Dormitory;
 
 public class DormitoryBizImpl implements DormitoryBiz{
-	//引入Dao
+
 		DormitoryDao sdao = new DormitoryDao();
 
 		
 		public boolean add(Dormitory d) {
 			String sql = "insert into Dormitory values(?,?)";
-			//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 			Object[] params = {d.getDno(), d.getDtel()};
 			return sdao.update(sql, params);
 		}

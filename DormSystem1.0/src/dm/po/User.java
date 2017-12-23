@@ -3,7 +3,7 @@ package dm.po;
 public class User {
 	private String Uno;
 	private String Pass;
-	private int Pri;//身份，1代表老师，0代表学生
+	private int Pri;
 	public User(){
 		super();
 	}

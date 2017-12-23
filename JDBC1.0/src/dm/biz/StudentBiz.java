@@ -8,7 +8,6 @@ public interface StudentBiz {
 
 	public boolean add(Student s);
 	
-
 	public boolean delete(String sno);
 	
 

@@ -10,7 +10,7 @@ public class DABizImpl implements DABiz{
 	DADao ddao = new DADao();
 	public boolean add(DA d) {
 		String sql = "insert into DA values(?,?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+		//params涓殑鍙傛暟鏄寜椤哄簭閫愪釜缁欙紵璧嬪�硷紝鍥犳闇�瑕佹敞鎰忔暟鎹〃椤哄簭
 		Object[] params = {d.getDno(), d.getAno(), d.getAmount()};
 		return ddao.update(sql, params);
 	}

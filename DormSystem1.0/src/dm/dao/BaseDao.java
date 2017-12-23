@@ -8,24 +8,22 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
-
+@SuppressWarnings("unchecked")
 public class BaseDao {
 	public static Connection getCon() {
         PreparedStatement ps=null;     
         Connection ct=null;
         ResultSet rs=null;
         try {
-            //1. ¼ÓÔØÇı¶¯
+            //1. åŠ è½½é©±åŠ¨
         	String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
             String url="jdbc:sqlserver://localhost:1433;databaseName=Dorm_System";
-            String user="sa";//sa ³¬¼¶¹ÜÀíÔ±
-            String password="0000";// ÃÜÂë
+            String user="sa";//sa è¶…çº§ç®¡ç†å‘˜
+            String password="0000";// å¯†ç 
             Class.forName(driver);
-            //2. Á¬½Ó
+            //2. è¿æ¥
             ct=DriverManager.getConnection(url,user,password);
-        } catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
+        } catch (ClassNotFoundException | SQLException e) {
         }finally{
             try {
                 if(rs!=null){
@@ -35,17 +33,17 @@ public class BaseDao {
                     ps.close();
                 }
             } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
             }
         }
         return ct;
     }
 	/**
-     * Ö´ĞĞ¸üĞÂµÄsqlÓï¾ä,²åÈë,ĞŞ¸Ä,É¾³ı
+     * æ‰§è¡Œæ›´æ–°çš„sqlè¯­å¥,æ’å…¥,ä¿®æ”¹,åˆ é™¤
      * @param sql
+     * @param params
      * @return
      */
+ 
     public boolean update(String sql,Object[] params) {
         Connection conn = null;
         boolean flag = false;
@@ -57,14 +55,13 @@ public class BaseDao {
                 flag = true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             DbUtils.closeQuietly(conn);
         }
         return flag;
     }
     /**
-     * ²éÕÒ¶à¸ö¶ÔÏó
+     * æŸ¥æ‰¾å¤šä¸ªå¯¹è±¡
      * @param sql
      * @param clazz
      * @return
@@ -80,19 +77,19 @@ public class BaseDao {
                     conn,
                     sql,
                     new BeanListHandler(clazz));
-            //BeanListHandler´¦ÀíÁË´ÓResultSetÖĞ»ñÈ¡Êı¾İ£¬·â×°¶ÔÏó²¢´æÈëList¼¯ºÏ
-            //Ô´ÂëÍ¬ÑùĞèÒªÓÃµ½ResultSet
+            //BeanListHandlerå¤„ç†äº†ä»ResultSetä¸­è·å–æ•°æ®ï¼Œå°è£…å¯¹è±¡å¹¶å­˜å…¥Listé›†åˆ
+            //æºç åŒæ ·éœ€è¦ç”¨åˆ°ResultSet
         } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             DbUtils.closeQuietly(conn);
         }
         return beans;
     }
     /**
-     * ÖØÔØ²éÑ¯¶à¸ö¶ÔÏó·½·¨
+     * é‡è½½æŸ¥è¯¢å¤šä¸ªå¯¹è±¡æ–¹æ³•
      * @param sql
      * @param clazz
+     * @param params
      * @return
      */
     public List query(String sql, Class clazz,Object[] params) {
@@ -103,17 +100,16 @@ public class BaseDao {
             QueryRunner qRunner = new QueryRunner();
             beans = (List)qRunner.query(conn,sql, new BeanListHandler(clazz) ,params);
             
-            //BeanListHandler´¦ÀíÁË´ÓResultSetÖĞ»ñÈ¡Êı¾İ£¬·â×°¶ÔÏó²¢´æÈëList¼¯ºÏ
-            //Ô´ÂëÍ¬ÑùĞèÒªÓÃµ½ResultSet
+            //BeanListHandlerå¤„ç†äº†ä»ResultSetä¸­è·å–æ•°æ®ï¼Œå°è£…å¯¹è±¡å¹¶å­˜å…¥Listé›†åˆ
+            //æºç åŒæ ·éœ€è¦ç”¨åˆ°ResultSet
         } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             DbUtils.closeQuietly(conn);
         }
         return beans;
     }
     /**
-     * ²éÕÒ¶ÔÏó
+     * æŸ¥æ‰¾å¯¹è±¡
      * @param sql
      * @param clazz
      * @return
@@ -126,16 +122,16 @@ public class BaseDao {
             QueryRunner qRunner = new QueryRunner();
             obj = qRunner.query(conn, sql,new BeanHandler(clazz));
         } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             DbUtils.closeQuietly(conn);
         }
         return obj;
     }
     /**
-     * ÖØÔØ²éÑ¯µ¥¶ÔÏó·½·¨
+     * é‡è½½æŸ¥è¯¢å•å¯¹è±¡æ–¹æ³•
      * @param sql
      * @param clazz
+     * @param params
      * @return
      */
     public Object get(String sql, Class clazz,Object[] params) {
@@ -146,7 +142,6 @@ public class BaseDao {
             QueryRunner qRunner = new QueryRunner();
             obj = qRunner.query(conn, sql, new BeanHandler(clazz),params);
         } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             DbUtils.closeQuietly(conn);
         }
