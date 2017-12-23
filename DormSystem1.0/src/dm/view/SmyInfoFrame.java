@@ -5,17 +5,28 @@
  */
 package dm.view;
 
+import dm.biz.StudentBiz;
+import dm.biz.StudentBizImpl;
+import dm.util.LocationUtil;
+import dm.util.StringUtil;
+import dm.util.FrameUtil;
 /**
  *
  * @author LIUYIYU
  */
 public class SmyInfoFrame extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form SmyInfoFrame
-     */
+    //引入biz
+    StudentBiz sbiz = new StudentBizImpl();
+    
     public SmyInfoFrame() {
         initComponents();
+        this.Sno.setEditable(false);
+        this.Sname.setEditable(false);
+        this.Ssex.setEditable(false);
+        this.Sdept.setEditable(false);
+        this.Sgrade.setEditable(false);
+        LocationUtil.setScreenCenter(this);
     }
 
     /**
@@ -39,6 +50,11 @@ public class SmyInfoFrame extends javax.swing.JInternalFrame {
         Ssex = new javax.swing.JTextField();
         Sdept = new javax.swing.JTextField();
 
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+
         label1.setText("姓名：");
 
         jLabel1.setText("性别：");
@@ -55,12 +71,12 @@ public class SmyInfoFrame extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(label1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Sno, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)

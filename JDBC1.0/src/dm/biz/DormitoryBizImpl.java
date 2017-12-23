@@ -2,7 +2,7 @@ package dm.biz;
 
 import java.util.List;
 
-import dm.Dao.DormitoryDao;
+import dm.dao.DormitoryDao;
 import dm.po.Dormitory;
 
 public class DormitoryBizImpl implements DormitoryBiz{

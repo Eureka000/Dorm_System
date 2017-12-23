@@ -5,17 +5,20 @@
  */
 package dm.view;
 
+import dm.util.LocationUtil;
+import dm.util.StringUtil;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LIUYIYU
  */
 public class LoginFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LoginFrame
-     */
+    
     public LoginFrame() {
         initComponents();
+        LocationUtil.setScreenCenter(this); //窗口居中
     }
 
     /**
@@ -47,6 +50,11 @@ public class LoginFrame extends javax.swing.JFrame {
         });
 
         login.setText("登录");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
 
         newpass.setText("修改密码");
 
@@ -96,6 +104,49 @@ public class LoginFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        // 登录
+        //获取用户名和密码
+        String usname = this.name.getText().trim();
+        char[] pswd = this.password.getPassword();
+        String password = new String(pswd);
+        //调用业务类
+        //非空验证
+        if(StringUtil.checkLength(usname) == false){
+            JOptionPane.showMessageDialog(this, "用户名不能为空！");
+            return;
+        }
+        if(StringUtil.checkLength(password) == false){
+            JOptionPane.showMessageDialog(this, "密码不能为空！");
+            return;
+        }
+        //验证用户名是否存在
+       // User newu = ubiz.userlogin(usname,password);
+//        User user = ubiz.findByUsname(usname);
+//        if(user == null){
+//            JOptionPane.showMessageDialog(this, "用户名不存在！");
+//            //清空面板信息
+//            clearInput();
+//            return;              
+//        }
+//        else{
+//            if(user.getPswd().equals(password)){   
+//                // 打开主界面，并将登录对象传递给主界面
+//                // 先传值
+//                MainFrame.user = user;
+//                MainFrame mf = new MainFrame();
+//                mf.setVisible(true);
+//                this.dispose(); //关闭登录界面
+//            }
+//            else{
+//                JOptionPane.showMessageDialog(this, "密码错误！");  
+//                this.password.setText("");
+//                return;
+//            }
+//        }
+            
+    }//GEN-LAST:event_loginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -130,6 +181,11 @@ public class LoginFrame extends javax.swing.JFrame {
             }
         });
     }
+    
+    private void clearInput() {
+       this.name.setText("");
+       this.password.setText("");
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel label1;

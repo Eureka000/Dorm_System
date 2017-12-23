@@ -7,11 +7,9 @@ import dm.vo.SD;
 public interface SDBiz {
 	public boolean add(SD s);
 
-	public boolean delete(SD s);
+	public boolean delete(String Sno, String Dno);
 
-	public boolean update(SD s);
-
-	public SD findById(SD s);
+	public SD findById(String Dno);
 
 	public List<SD> findAll();
 
