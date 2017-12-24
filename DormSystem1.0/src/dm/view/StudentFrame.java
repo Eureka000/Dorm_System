@@ -5,6 +5,7 @@
  */
 package dm.view;
 
+import dm.po.User;
 import dm.util.FrameUtil;
 import dm.util.LocationUtil;
 import java.beans.PropertyVetoException;
@@ -18,7 +19,8 @@ import javax.swing.JOptionPane;
  * @author LIUYIYU
  */
 public class StudentFrame extends javax.swing.JFrame {
-
+    
+    public static User u;
     /**
      * Creates new form StudentFrame
      */
@@ -61,6 +63,11 @@ public class StudentFrame extends javax.swing.JFrame {
         });
 
         mydorm.setText("我的宿舍");
+        mydorm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mydormActionPerformed(evt);
+            }
+        });
 
         mymail.setText("我的快递");
 
@@ -125,7 +132,7 @@ public class StudentFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_leaveActionPerformed
 
     private void myinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myinfoActionPerformed
-        
+        SmyInfoFrame.u = this.u;
         showFrame(SmyInfoFrame.class);
     }//GEN-LAST:event_myinfoActionPerformed
 
@@ -138,12 +145,15 @@ public class StudentFrame extends javax.swing.JFrame {
       
     }//GEN-LAST:event_logoutActionPerformed
 
+    private void mydormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mydormActionPerformed
+        
+    }//GEN-LAST:event_mydormActionPerformed
+
     //显示窗体内容
     public void showFrame(Class clazz) {
         try {
             // new 对象
             JInternalFrame frame = FrameUtil.buildFrame(clazz);
-            //this.removeAll();
             this.remove(frame);
             // 桌面容器再添加
             this.add(frame);

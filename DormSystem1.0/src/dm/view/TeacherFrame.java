@@ -9,12 +9,12 @@ package dm.view;
  *
  * @author LIUYIYU
  */
-public class TeacherFrame extends javax.swing.JFrame {
+public class Teacher extends javax.swing.JFrame {
 
     /**
-     * Creates new form TeacherJFrame
+     * Creates new form Teacher
      */
-    public TeacherFrame() {
+    public Teacher() {
         initComponents();
     }
 
@@ -29,65 +29,67 @@ public class TeacherFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         logout = new javax.swing.JButton();
-        myinfo = new javax.swing.JButton();
-        stu = new javax.swing.JButton();
-        leave = new javax.swing.JButton();
-        fixinfo = new javax.swing.JButton();
-        curfewinfo = new javax.swing.JButton();
-        asset = new javax.swing.JButton();
+        myInfo = new javax.swing.JButton();
+        Sinfo = new javax.swing.JButton();
+        leaveRtn = new javax.swing.JButton();
+        fixInfo = new javax.swing.JButton();
+        ScurInfo = new javax.swing.JButton();
+        AssetMana = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logout.setText("注销");
 
-        myinfo.setText("个人中心");
+        myInfo.setText("个人中心");
 
-        stu.setText("学生管理");
+        Sinfo.setText("学生管理");
 
-        leave.setText("离/返校信息");
+        leaveRtn.setText("离/返校信息");
 
-        fixinfo.setText("报修信息");
+        fixInfo.setText("报修信息");
 
-        curfewinfo.setText("晚归信息");
+        ScurInfo.setText("晚归信息");
 
-        asset.setText("财产管理");
+        AssetMana.setText("财产管理");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(leave)
-                .addGap(34, 34, 34)
+                .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fixinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(curfewinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(asset, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stu, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(leaveRtn)
+                        .addGap(32, 32, 32)
+                        .addComponent(fixInfo)
+                        .addGap(37, 37, 37)
+                        .addComponent(ScurInfo)
+                        .addGap(51, 51, 51)
+                        .addComponent(AssetMana))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(logout)
+                        .addGap(60, 60, 60)
+                        .addComponent(myInfo)
+                        .addGap(61, 61, 61)
+                        .addComponent(Sinfo)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(69, 69, 69)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stu, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83)
+                    .addComponent(logout)
+                    .addComponent(myInfo)
+                    .addComponent(Sinfo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(asset, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(curfewinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fixinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(leave, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(213, Short.MAX_VALUE))
+                    .addComponent(leaveRtn)
+                    .addComponent(fixInfo)
+                    .addComponent(ScurInfo)
+                    .addComponent(AssetMana))
+                .addGap(105, 105, 105))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,9 +104,8 @@ public class TeacherFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -127,33 +128,32 @@ public class TeacherFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TeacherFrame().setVisible(true);
+                new Teacher().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton asset;
-    private javax.swing.JButton curfewinfo;
-    private javax.swing.JButton fixinfo;
+    private javax.swing.JButton AssetMana;
+    private javax.swing.JButton ScurInfo;
+    private javax.swing.JButton Sinfo;
+    private javax.swing.JButton fixInfo;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton leave;
+    private javax.swing.JButton leaveRtn;
     private javax.swing.JButton logout;
-    private javax.swing.JButton myinfo;
-    private javax.swing.JButton stu;
+    private javax.swing.JButton myInfo;
     // End of variables declaration//GEN-END:variables
 }
