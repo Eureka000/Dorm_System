@@ -2,15 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/D:/学习/作业/数据库系统概论/课程设计/Dorm_System/DormSystem1.0/src/dm/view/LoginFrame.java</file>
-            <file>file:/D:/学习/作业/数据库系统概论/课程设计/Dorm_System/DormSystem1.0/src/dm/biz/AssetBiz.java</file>
-=======
-            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TdorAssetFrame.java</file>
-            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TmanageStuFrame.java</file>
-            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TeacherFrame.java</file>
->>>>>>> a745e037be4f2105f786a36ec25c8e72a3ede3bf
-        </group>
+        <group/>
     </open-files>
 </project-private>
