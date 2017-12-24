@@ -143,7 +143,7 @@ public class StudentFrame extends javax.swing.JFrame {
         try {
             // new 对象
             JInternalFrame frame = FrameUtil.buildFrame(clazz);
-            this.removeAll();
+            //this.removeAll();
             this.remove(frame);
             // 桌面容器再添加
             this.add(frame);
