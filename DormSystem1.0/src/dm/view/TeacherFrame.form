@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="leaveRtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="fixInfo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                          <Component id="ScurInfo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                          <Component id="AssetMana" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="logout" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="myInfo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="Sinfo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="52" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="logout" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="myInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Sinfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="115" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="leaveRtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fixInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ScurInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="AssetMana" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="logout">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x6ce8;&#x9500;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="myInfo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x4e2a;&#x4eba;&#x4e2d;&#x5fc3;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="Sinfo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x5b66;&#x751f;&#x7ba1;&#x7406;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="leaveRtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x79bb;/&#x8fd4;&#x6821;&#x4fe1;&#x606f;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="fixInfo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x62a5;&#x4fee;&#x4fe1;&#x606f;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ScurInfo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x665a;&#x5f52;&#x4fe1;&#x606f;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="AssetMana">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x8d22;&#x4ea7;&#x7ba1;&#x7406;"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

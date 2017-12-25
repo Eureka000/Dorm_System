@@ -5,6 +5,9 @@
  */
 package dm.view;
 
+import dm.po.Asset;
+import dm.po.Dormitory;
+
 /**
  *
  * @author LIUYIYU
@@ -14,6 +17,10 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form SmyDormFrame
      */
+    
+    public static Dormitory dorm;
+    public static Asset a;
+    
     public SmyDormFrame() {
         initComponents();
     }

@@ -94,6 +94,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6211;&#x7684;&#x5bbf;&#x820d;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mydormActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="mymail">
       <Properties>

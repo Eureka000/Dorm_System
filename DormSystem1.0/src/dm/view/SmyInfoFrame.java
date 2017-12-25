@@ -7,17 +7,24 @@ package dm.view;
 
 import dm.biz.StudentBiz;
 import dm.biz.StudentBizImpl;
+import dm.po.Student;
+import dm.po.User;
 import dm.util.LocationUtil;
 import dm.util.StringUtil;
 import dm.util.FrameUtil;
+
 /**
  *
  * @author LIUYIYU
  */
 public class SmyInfoFrame extends javax.swing.JInternalFrame {
 
+    
+    public static User u; 
     //引入biz
     StudentBiz sbiz = new StudentBizImpl();
+    public Student s = sbiz.findById(u.getUno());
+    
     
     public SmyInfoFrame() {
         initComponents();
@@ -26,6 +33,13 @@ public class SmyInfoFrame extends javax.swing.JInternalFrame {
         this.Ssex.setEditable(false);
         this.Sdept.setEditable(false);
         this.Sgrade.setEditable(false);
+        this.Sno.setText(s.getSno());
+        this.Sname.setText(s.getSname());
+        this.Ssex.setText(s.getSsex());
+        this.Sdept.setText(s.getSdept());
+        this.Sgrade.setText(s.getSgrade().toString());
+        
+        
         LocationUtil.setScreenCenter(this);
     }
 
