@@ -171,7 +171,7 @@ insert into Building values('7','南海苑','22:45:00');
 create table Dormitory
 (Dno char(6) primary key,
  Bno char(2),
- dtel char(20) not null,
+ Dtel char(20) not null,
  foreign key(Bno) references Building(Bno)
 );
 
