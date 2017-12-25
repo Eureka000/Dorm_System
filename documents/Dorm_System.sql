@@ -5,9 +5,9 @@ drop table Repairs;
 drop table Curfew;
 drop table Mail;
 drop table LeaveSchool;
-drop table Building;
 drop table Asset;
 drop table Dormitory;
+drop table Building;
 drop table Teacher;
 drop table Student;
 drop table Users;
@@ -147,28 +147,50 @@ insert into Teacher values('2370','高展','男');
 insert into Teacher values('2371','白云','男');
 insert into Teacher values('2372','孙晓斌','男');
 
+
+--创建Building（宿舍楼）表
+create table Building
+(Bno char(2) primary key,
+ Bblock char(6) not null,
+ Btime time not null
+);
+--对Bblock添加check约束
+alter table Building
+add constraint CK_Bblock check(Bblock='北海苑' or Bblock='东海苑' or Bblock='南海苑');
+
+insert into Building values('1','北海苑','22:30:00');
+insert into Building values('2','北海苑','22:30:00');
+insert into Building values('3','北海苑','22:30:00');
+insert into Building values('4','东海苑','22:45:00');
+insert into Building values('5','东海苑','22:45:00');
+insert into Building values('6','南海苑','22:45:00');
+insert into Building values('7','南海苑','22:45:00');
+
+
 --创建Dormitory（宿舍）表
 create table Dormitory
 (Dno char(6) primary key,
+ Bno char(2),
  dtel char(20) not null,
+ foreign key(Bno) references Building(Bno)
 );
 
-insert into Dormitory values('1#101','6001101');
-insert into Dormitory values('1#102','6001102');
-insert into Dormitory values('1#103','6001103');
-insert into Dormitory values('2#101','6002101');
-insert into Dormitory values('2#102','6002102');
-insert into Dormitory values('2#103','6002103');
-insert into Dormitory values('3#101','6003101');
-insert into Dormitory values('3#102','6003102');
-insert into Dormitory values('4#101','6004101');
-insert into Dormitory values('4#102','6004102');
-insert into Dormitory values('5#101','6005101');
-insert into Dormitory values('5#102','6005102');
-insert into Dormitory values('6#101','6006101');
-insert into Dormitory values('6#102','6006102');
-insert into Dormitory values('7#101','6007101');
-insert into Dormitory values('7#102','6007102');
+insert into Dormitory values('1#101','1','6001101');
+insert into Dormitory values('1#102','1','6001102');
+insert into Dormitory values('1#103','1','6001103');
+insert into Dormitory values('2#101','2','6002101');
+insert into Dormitory values('2#102','2','6002102');
+insert into Dormitory values('2#103','2','6002103');
+insert into Dormitory values('3#101','3','6003101');
+insert into Dormitory values('3#102','3','6003102');
+insert into Dormitory values('4#101','4','6004101');
+insert into Dormitory values('4#102','4','6004102');
+insert into Dormitory values('5#101','5','6005101');
+insert into Dormitory values('5#102','5','6005102');
+insert into Dormitory values('6#101','6','6006101');
+insert into Dormitory values('6#102','6','6006102');
+insert into Dormitory values('7#101','7','6007101');
+insert into Dormitory values('7#102','7','6007102');
 
 
 --创建Asset（财产）表
@@ -188,23 +210,6 @@ insert into Asset values('6','门',1600,50);
 insert into Asset values('7','公共洗衣机',2500,4);
 insert into Asset values('8','公共吹风机',70,15);
 
---创建Building（宿舍楼）表
-create table Building
-(Bno char(2) primary key,
- Bblock char(6) not null,
- Btime time not null
-);
---对Bblock添加check约束
-alter table Building
-add constraint CK_Bblock check(Bblock='北海苑' or Bblock='东海苑' or Bblock='南海苑');
-
-insert into Building values('1','北海苑','22:30:00');
-insert into Building values('2','北海苑','22:30:00');
-insert into Building values('3','北海苑','22:30:00');
-insert into Building values('4','东海苑','22:45:00');
-insert into Building values('5','东海苑','22:45:00');
-insert into Building values('6','南海苑','22:45:00');
-insert into Building values('7','南海苑','22:45:00');
 
 --创建LeaveSchool（学生离校）表
 create table LeaveSchool
