@@ -5,16 +5,24 @@
  */
 package dm.view;
 
+import dm.po.User;
+import dm.util.FrameUtil;
+import dm.util.LocationUtil;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
+
 /**
  *
- * @author LIUYIYU
+ * @author 28104
  */
-public class Teacher extends javax.swing.JFrame {
-
+public class TeacherFrame extends javax.swing.JFrame {
+    public static User u;
     /**
-     * Creates new form Teacher
+     * Creates new form TeacherFrame
      */
-    public Teacher() {
+    public TeacherFrame() {
         initComponents();
     }
 
@@ -27,90 +35,143 @@ public class Teacher extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        logout = new javax.swing.JButton();
         myInfo = new javax.swing.JButton();
-        Sinfo = new javax.swing.JButton();
-        leaveRtn = new javax.swing.JButton();
-        fixInfo = new javax.swing.JButton();
-        ScurInfo = new javax.swing.JButton();
-        AssetMana = new javax.swing.JButton();
+        stuManage = new javax.swing.JButton();
+        leaveSchool = new javax.swing.JButton();
+        repairInfo = new javax.swing.JButton();
+        curfewInfo = new javax.swing.JButton();
+        assetManage = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        logout.setText("注销");
+        setBackground(new java.awt.Color(0, 204, 204));
 
         myInfo.setText("个人中心");
+        myInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myInfoActionPerformed(evt);
+            }
+        });
 
-        Sinfo.setText("学生管理");
+        stuManage.setText("学生管理");
+        stuManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stuManageActionPerformed(evt);
+            }
+        });
 
-        leaveRtn.setText("离/返校信息");
+        leaveSchool.setText("离/返校信息");
+        leaveSchool.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                leaveSchoolActionPerformed(evt);
+            }
+        });
 
-        fixInfo.setText("报修信息");
+        repairInfo.setText("报修信息");
+        repairInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                repairInfoActionPerformed(evt);
+            }
+        });
 
-        ScurInfo.setText("晚归信息");
+        curfewInfo.setText("晚归信息");
+        curfewInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                curfewInfoActionPerformed(evt);
+            }
+        });
 
-        AssetMana.setText("财产管理");
+        assetManage.setText("财产管理");
+        assetManage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assetManageActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(leaveRtn)
-                        .addGap(32, 32, 32)
-                        .addComponent(fixInfo)
-                        .addGap(37, 37, 37)
-                        .addComponent(ScurInfo)
-                        .addGap(51, 51, 51)
-                        .addComponent(AssetMana))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(logout)
-                        .addGap(60, 60, 60)
-                        .addComponent(myInfo)
-                        .addGap(61, 61, 61)
-                        .addComponent(Sinfo)))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(logout)
-                    .addComponent(myInfo)
-                    .addComponent(Sinfo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(leaveRtn)
-                    .addComponent(fixInfo)
-                    .addComponent(ScurInfo)
-                    .addComponent(AssetMana))
-                .addGap(105, 105, 105))
-        );
+        logout.setText("注销");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(leaveSchool, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stuManage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(myInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(repairInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(curfewInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(assetManage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 387, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(23, 23, 23)
+                .addComponent(myInfo)
+                .addGap(18, 18, 18)
+                .addComponent(stuManage)
+                .addGap(18, 18, 18)
+                .addComponent(leaveSchool)
+                .addGap(18, 18, 18)
+                .addComponent(repairInfo)
+                .addGap(18, 18, 18)
+                .addComponent(curfewInfo)
+                .addGap(18, 18, 18)
+                .addComponent(assetManage)
+                .addGap(18, 18, 18)
+                .addComponent(logout)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void myInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myInfoActionPerformed
+        TmyInfoFrame.u = this.u;
+        showFrame(TmyInfoFrame.class);
+    }//GEN-LAST:event_myInfoActionPerformed
+
+    private void stuManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stuManageActionPerformed
+        showFrame(TmanageStuFrame.class);
+    }//GEN-LAST:event_stuManageActionPerformed
+
+    private void leaveSchoolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveSchoolActionPerformed
+        showFrame(TstuLeaveFrame.class);
+    }//GEN-LAST:event_leaveSchoolActionPerformed
+
+    private void repairInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_repairInfoActionPerformed
+        showFrame(TfixInfoFrame.class);
+    }//GEN-LAST:event_repairInfoActionPerformed
+
+    private void curfewInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curfewInfoActionPerformed
+        showFrame(TstuCurfewFrame.class);
+    }//GEN-LAST:event_curfewInfoActionPerformed
+
+    private void assetManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assetManageActionPerformed
+        showFrame(TdorAssetFrame.class);
+    }//GEN-LAST:event_assetManageActionPerformed
+        //显示窗体内容
+    public void showFrame(Class clazz) {
+        try {
+            // new 对象
+            JInternalFrame frame = FrameUtil.buildFrame(clazz);
+            this.remove(frame);
+            // 桌面容器再添加
+            this.add(frame);
+            // 显示
+            LocationUtil.setScreenCenter(frame);
+            frame.setVisible(true);
+            // 显示在最前
+            frame.toFront();
+            // 处于选中状态
+            frame.setSelected(true);
+        } catch (PropertyVetoException ex) {
+            
+            Logger.getLogger(TmyInfoFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -128,32 +189,31 @@ public class Teacher extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Teacher.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TeacherFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Teacher().setVisible(true);
+                new TeacherFrame().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AssetMana;
-    private javax.swing.JButton ScurInfo;
-    private javax.swing.JButton Sinfo;
-    private javax.swing.JButton fixInfo;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton leaveRtn;
+    private javax.swing.JButton assetManage;
+    private javax.swing.JButton curfewInfo;
+    private javax.swing.JButton leaveSchool;
     private javax.swing.JButton logout;
     private javax.swing.JButton myInfo;
+    private javax.swing.JButton repairInfo;
+    private javax.swing.JButton stuManage;
     // End of variables declaration//GEN-END:variables
 }

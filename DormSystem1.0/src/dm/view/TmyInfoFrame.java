@@ -4,18 +4,40 @@
  * and open the template in the editor.
  */
 package dm.view;
-
+import dm.biz.TeacherBiz;
+import dm.biz.TeacherBizImpl;
+import dm.biz.DTBiz;
+import dm.biz.DTBizImpl;
+import dm.vo.DT;
+import dm.po.Teacher;
+import dm.po.User;
+import dm.util.LocationUtil;
+import dm.util.StringUtil;
+import dm.util.FrameUtil;
 /**
  *
  * @author 28104
  */
 public class TmyInfoFrame extends javax.swing.JInternalFrame {
-
+    public static User u;
+    TeacherBiz tbiz = new TeacherBizImpl();
+    DTBiz dabiz = new DTBizImpl(); 
+    public Teacher teacher = tbiz.findById(u.getUno());
+    public  DT dt = dabiz.findByTno(u.getUno());
     /**
      * Creates new form TmyInfoFrame
      */
     public TmyInfoFrame() {
         initComponents();
+        this.Tno.setEditable(false);
+        this.Tname.setEditable(false);
+        this.Tsex.setEditable(false);
+        this.Bno.setEditable(false);
+        this.Tno.setText(teacher.getTno());
+        this.Tname.setText(teacher.getTname());
+        this.Tsex.setText(teacher.getTsex());
+        this.Bno.setText(dt.getBno());
+        LocationUtil.setScreenCenter(this);
     }
 
     /**
@@ -35,7 +57,7 @@ public class TmyInfoFrame extends javax.swing.JInternalFrame {
         Tname = new javax.swing.JTextField();
         Tsex = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtBno = new javax.swing.JTextField();
+        Bno = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -73,10 +95,10 @@ public class TmyInfoFrame extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel4)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtBno, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(Bno, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel1)
-                                    .addGap(18, 18, 18)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(Tno, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(178, Short.MAX_VALUE))
         );
@@ -97,10 +119,10 @@ public class TmyInfoFrame extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Tno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(txtBno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Bno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65))
         );
 
@@ -120,6 +142,7 @@ public class TmyInfoFrame extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Bno;
     private javax.swing.JTextField Tname;
     private javax.swing.JTextField Tno;
     private javax.swing.JTextField Tsex;
@@ -128,6 +151,5 @@ public class TmyInfoFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtBno;
     // End of variables declaration//GEN-END:variables
 }

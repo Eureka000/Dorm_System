@@ -36,7 +36,37 @@ public class StudentBizImpl implements StudentBiz{
 		Object[] params = {Sno};
 		return (Student) sdao.get(sql, Student.class, params);
 	}
-
+        
+        public boolean findStudent(String Sno) {
+                String sql = "select * from Student where Sno = ?";
+                Object[] params = {Sno};
+                Student s = (Student) sdao.get(sql, Student.class, params);
+                if(s!=null) 
+                    return true;
+                else 
+                    return false;                   
+        }
+        
+        public List<Student> findBySname(String Sname) {
+                String sql = "select * from Student where Sname = ?";
+                Object[] params = {Sname};
+                return sdao.query(sql, Student.class, params);
+        }
+        public List<Student> findBySsex(String Ssex) {
+                String sql = "select * from Student where Ssex = ?";
+                Object[] params = {Ssex};
+                return sdao.query(sql, Student.class, params);
+        }
+        public List<Student> findBySgrade(String Sgrade) {
+                String sql = "select * from Student where Sgrade = ?";
+                Object[] params = {Sgrade};
+                return sdao.query(sql, Student.class, params);
+        }
+        public List<Student> findBySdept(String Sdept) {
+                String sql = "select * from Student where Sdept = ?";
+                Object[] params = {Sdept};
+                return sdao.query(sql, Student.class, params);
+        }
 
 	public List<Student> findAll() {
 		String sql = "select * from Student";

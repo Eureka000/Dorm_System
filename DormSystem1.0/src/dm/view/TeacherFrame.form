@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="cc" green="cc" red="0" type="rgb"/>
+    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -23,110 +26,95 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="leaveSchool" max="32767" attributes="0"/>
+                  <Component id="stuManage" alignment="0" max="32767" attributes="0"/>
+                  <Component id="myInfo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="repairInfo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="curfewInfo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="assetManage" alignment="0" max="32767" attributes="0"/>
+                  <Component id="logout" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="0" pref="387" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel1" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="myInfo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="stuManage" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="leaveSchool" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="repairInfo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="curfewInfo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="assetManage" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="logout" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="leaveRtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="fixInfo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                          <Component id="ScurInfo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="AssetMana" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="logout" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="myInfo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                          <Component id="Sinfo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace pref="52" max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="logout" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="myInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Sinfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="115" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="leaveRtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="fixInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ScurInfo" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AssetMana" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="logout">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x6ce8;&#x9500;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="myInfo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x4e2a;&#x4eba;&#x4e2d;&#x5fc3;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="Sinfo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x5b66;&#x751f;&#x7ba1;&#x7406;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="leaveRtn">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x79bb;/&#x8fd4;&#x6821;&#x4fe1;&#x606f;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="fixInfo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x62a5;&#x4fee;&#x4fe1;&#x606f;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="ScurInfo">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x665a;&#x5f52;&#x4fe1;&#x606f;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="AssetMana">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="&#x8d22;&#x4ea7;&#x7ba1;&#x7406;"/>
-          </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
+    <Component class="javax.swing.JButton" name="myInfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x4e2a;&#x4eba;&#x4e2d;&#x5fc3;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myInfoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="stuManage">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x5b66;&#x751f;&#x7ba1;&#x7406;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="stuManageActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="leaveSchool">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x79bb;/&#x8fd4;&#x6821;&#x4fe1;&#x606f;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="leaveSchoolActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="repairInfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x62a5;&#x4fee;&#x4fe1;&#x606f;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="repairInfoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="curfewInfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x665a;&#x5f52;&#x4fe1;&#x606f;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="curfewInfoActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="assetManage">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x8d22;&#x4ea7;&#x7ba1;&#x7406;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="assetManageActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="logout">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x6ce8;&#x9500;"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

@@ -17,19 +17,25 @@ public class DTBizImpl implements DTBiz {
 		
 	}
 
-	public boolean delete(int Bno, String Tno)
+	public boolean delete(String Bno, String Tno)
 	{
 		String sql = "delete from DT where Bno = ? AND Tno = ?";
 		Object[] params = {Bno,Tno};
 		return ddao.update(sql, params);
 	}
 
-	public DT findById(String Bno)
+	public DT findByBno(String Bno)
 	{
 		String sql = "select * from DT where Bno = ?";
 		Object[] params = {Bno};
 		return (DT) ddao.get(sql, DT.class, params);
 	}
+        public DT findByTno(String Tno)
+        {
+                String sql = "select * from DT where Tno = ?";
+		Object[] params = {Tno};
+		return (DT) ddao.get(sql, DT.class, params);
+        }
 
 	public List<DT> findAll()
 	{
