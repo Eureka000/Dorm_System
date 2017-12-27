@@ -387,13 +387,13 @@ public class TstuCurfewFrame extends javax.swing.JInternalFrame {
         String NightReason = this.txtNightReason.getText().trim();
         String Tno = this.txtTno.getText().trim();
         //验证是否已批准
-        if(this.txtNightReason.getText().trim().equals(null)){
-            JOptionPane.showMessageDialog(this, "您已批准过！");
-            return;
-        }
-        else{
+        if(this.txtTno.getText().trim().equals("null")){
             Tno = t.getTno();
             this.txtTno.setText(Tno);
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "您已批准过！");
+            return;
         }
 
        
