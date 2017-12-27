@@ -19,13 +19,9 @@ import dm.util.FrameUtil;
 import dm.util.LocationUtil;
 import dm.vo.SD;
 import dm.vo.tStuLeave;
-import java.sql.Date;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
