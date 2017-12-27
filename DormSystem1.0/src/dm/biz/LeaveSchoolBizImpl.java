@@ -1,6 +1,6 @@
 package dm.biz;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import dm.dao.LeaveSchoolDao;
@@ -18,17 +18,13 @@ public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
 	}
 
 
-	public boolean delete(String Sno, java.sql.Date Sltime) {
-		String sql = "delete from LeaveSchool where Sno = ? and Sltime = ?";
-		Object[] params = {Sno, Sltime};
+	public boolean delete(String dno, Date Sltime, Date Sreturn) {
+
+		String sql = "delete from LeaveSchool where Sno = ? and Sltime = ? and Sreturn = ?";
+		Object[] params = {dno, Sltime, Sreturn};
 		return sdao.update(sql, params);
 		}
-        public boolean update(String Sno, java.sql.Date Sltime,java.sql.Date Sreturn)
-        {
-            String sql = "update LeaveSchool set Sreturn = ? where Sno = ? and Sltime = ?";
-            Object[] params ={Sreturn, Sno, Sltime};
-            return sdao.update(sql, params);
-        }
+
 	public List<LeaveSchool> findAll() {
 		String sql = "select * from LeaveSchool";
 		return sdao.query(sql, LeaveSchool.class);
@@ -44,6 +40,6 @@ public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
 	public LeaveSchool findById (String sno) {
 		String sql = "select * from LeaveSchool where Sno = ?";
 		Object[] params = {sno};
-		return (LeaveSchool) sdao.get(sql, LeaveSchool.class, params);
+		return (LeaveSchool) sdao.get(sql, Asset.class, params);
 	}
 }
