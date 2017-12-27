@@ -42,4 +42,11 @@ public class SDBizImpl implements SDBiz {
 		Object[] params = {"%"+condition+"%"};
 		return sdao.query(sql, SD.class, params);
 	}
+
+    @Override
+    public boolean update(SD s) {
+        String sql = "update SD set Dno = ?, Scin = ? where Sno = ?";
+        Object[] params = {s.getDno(),s.getScin(),s.getSno()};
+        return sdao.update(sql, params);
+    }
 }
