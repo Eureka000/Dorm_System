@@ -25,10 +25,17 @@ public class SDBizImpl implements SDBiz {
 
 	public SD findById(String Dno)
 	{
-		String sql = "select * from DA where Dno = ?";
+		String sql = "select * from SD where Dno = ?";
 		Object[] params = {Dno};
 		return (SD) sdao.get(sql, SD.class, params);
 	}
+        
+        public SD findByStuId(String Sno)
+        {
+            String sql = "select * from SD where Sno = ?";
+		Object[] params = {Sno};
+		return (SD) sdao.get(sql, SD.class, params);
+        }
 
 	public List<SD> findAll()
 	{

@@ -14,7 +14,13 @@ public interface SDBiz {
 
         public boolean update(SD s);
         
+<<<<<<< HEAD
 
+=======
+	public SD findById(String Dno);
+        
+        public SD findByStuId(String Sno);
+>>>>>>> parent of bce5674... TstuLeaveFrame
 
 	public List<SD> findAll();
 
