@@ -9,6 +9,8 @@ public interface SDBiz {
 
 	public boolean delete(String Sno, String Dno);
 
+        public boolean update(SD s);
+        
 	public SD findById(String Dno);
 
 	public List<SD> findAll();

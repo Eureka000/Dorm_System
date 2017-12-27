@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/DormitoryBiz.java</file>
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/LocationUtil.java</file>
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/StudentFrame.java</file>
@@ -15,6 +16,72 @@
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/tStuLeaveBizImpl.java</file>
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/CurfewBiz.java</file>
             <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/StringUtil.java</file>
+=======
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/util/StringUtil.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/RepairsBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/DormitoryBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/User.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/SD.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/UserDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/TeacherBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Dormitory.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/tFixInfoDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/LeaveSchool.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/LeaveSchoolBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/TeacherBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TmyInfoFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/DTBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/tFixInfo.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TeacherFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TstuLeaveFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/Curfew.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/ScurFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/tStuLeaveDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TdorAssetFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/DTBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/SDBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tStuCurfew.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/tManageStu.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/LoginFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/AssetBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/SleaveFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TfixInfoFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/SmyDormFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tFixInfoBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/UserBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/tStuLeave.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tFixInfoBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/BaseDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TmanageStuFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Asset.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/tManageStuDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/StudentFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/BuildingBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/StudentBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tStuLeaveBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tStuCurfewBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/StudentBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Mail.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/SfixFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tStuLeaveBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/SmyInfoFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Teacher.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/SDBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/BuildingBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tManageStuBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/TstuCurfewFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/tManageStuBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/StudentDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/vo/DT.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/view/SmyMailFrame.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Student.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/UserBiz.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/po/Building.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/AssetBizImpl.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/AssetDao.java</file>
+            <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/tStuCurfewDao.java</file>
+>>>>>>> 86cf5513af7af5d65f9d21ac3138f852fc8cf035
         </group>
     </open-files>
 </project-private>
