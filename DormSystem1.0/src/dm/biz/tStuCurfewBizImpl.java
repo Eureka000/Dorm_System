@@ -5,10 +5,71 @@
  */
 package dm.biz;
 
+import dm.dao.tStuCurfewDao;
+import dm.vo.tStuCurfew;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author 28104
  */
-public class tStuCurfewBizImpl {
+public class tStuCurfewBizImpl implements tStuCurfewBiz{
+    tStuCurfewDao sdao = new tStuCurfewDao();
+
+    public boolean update(tStuCurfew s) {
+        String sql = "update tStuCurfew set Tno = ? where Sno = ?";
+	Object[] params = {s.getTno(), s.getSno()};
+	return sdao.update(sql, params);
+    }
+
+
+    public List<tStuCurfew> findBySno(String Sno) {
+        String sql = "select * from tStuCurfew where Sno = ?";
+	Object[] params = {Sno};
+	return sdao.query(sql, tStuCurfew.class, params);
+    }
+
+    public List<tStuCurfew> findBySname(String Sname) {
+        String sql = "select * from tStuCurfew where Sname = ?";
+	Object[] params = {Sname};
+	return sdao.query(sql, tStuCurfew.class, params);
+    }
+        
+    public List<tStuCurfew> findByDno(String Dno) {
+        String sql = "select * from tStuCurfew where Dno = ?";
+	Object[] params = {Dno};
+	return sdao.query(sql, tStuCurfew.class, params);
+    }
+    public List<tStuCurfew> findByPermit() {
+        String sql = "select * from tStuCurfew where Tno is not null";
+	//Object[] params = {Tno};
+	return sdao.query(sql, tStuCurfew.class);
+    }
+
+    public List<tStuCurfew> findByUnpermit() {
+        String sql = "select * from tStuCurfew where Tno is null";
+	//Object[] params = {Tno};
+	return sdao.query(sql, tStuCurfew.class);
+    }
+    public List<tStuCurfew> findByTno(String Tno) {
+        String sql = "select * from tStuCurfew where Tno = ?";
+        Object[] params = {Tno};
+        return sdao.query(sql, tStuCurfew.class, params);
+    }
     
+    
+    public List<tStuCurfew> findAll() {
+        String sql = "select * from tStuCurfew";
+	return sdao.query(sql, tStuCurfew.class);    
+    }
+
+    
+    public List<tStuCurfew> findByCondition(String condition) {
+        String sql = "select * from tStuCurfew and concat(Sno, Sname, Dno, Tno) like ?";
+		Object[] params = {"%"+condition+"%"};
+		return sdao.query(sql, tStuCurfew.class, params);
+    }
+
+
 }
