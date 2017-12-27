@@ -18,7 +18,7 @@ public interface tStuLeaveBiz {
 	
 	public boolean update(tStuLeave s);
 
-	public tStuLeave findBySno(String Sno);
+	public List<tStuLeave> findBySno(String Sno);
         
 	public List<tStuLeave> findBySname(String Sname);
         
