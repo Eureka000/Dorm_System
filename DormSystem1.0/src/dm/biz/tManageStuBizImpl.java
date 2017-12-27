@@ -62,6 +62,9 @@ public class tManageStuBizImpl implements tManageStuBiz{
 	return sdao.update(sql, params);
         */
         SD d = new SD(s.getSno(),s.getDno(),s.getScin());
+        if(s.getScin()==null){
+            System.out.println(454);
+        }
         SDBiz dbiz = new SDBizImpl();
         if(dbiz.update(d))
             return true;
@@ -143,15 +146,13 @@ public class tManageStuBizImpl implements tManageStuBiz{
 
     @Override
     public List<tManageStu> findAssigned() {
-        String sql = "select * from tManageStu where Dno is not null";
+        String sql = "select * from tManageStu where Dno <> '0#000'";
         return sdao.query(sql, tManageStu.class);
     }
 
     @Override
     public List<tManageStu> findDisAssigned() {
-        String dno = "0#000";
-        String sql = "select * from tManageStu where Dno is ?";
-        Object[] params = {dno};
+        String sql = "select * from tManageStu where Dno = '0#000'";
         return sdao.query(sql, tManageStu.class);
     }
 

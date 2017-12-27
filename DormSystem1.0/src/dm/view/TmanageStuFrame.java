@@ -211,7 +211,7 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addGap(24, 24, 24)
                 .addComponent(startDate, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9)
@@ -450,8 +450,8 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
             String Sdept = this.txtSdept.getText().trim();
             String Dno = "0#000";
             String Scin = this.txtScin.getText().trim();
-            StringTokenizer  st  =  new  StringTokenizer(Scin, "-");     
-            java.sql.Date sqlDate=new  java.sql.Date(Integer.parseInt(st.nextToken()));  
+            StringTokenizer  st  =  new  StringTokenizer("0000-00-00", "-");     
+            java.sql.Date sqlDate = new  java.sql.Date(Integer.parseInt(st.nextToken()));  
             tManageStu s = new tManageStu(Sno,Sname,Ssex,Integer.parseInt(Sgrade),Sdept,Dno,sqlDate);
             boolean result = sbiz.update(s);
             if(result == true) {
