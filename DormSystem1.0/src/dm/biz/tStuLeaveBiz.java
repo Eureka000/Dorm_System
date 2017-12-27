@@ -18,7 +18,7 @@ public interface tStuLeaveBiz {
 	
 	public boolean update(tStuLeave s);
 
-	public tStuLeave findBySno(String Sno);
+	public List<tStuLeave> findBySno(String Sno);
         
 	public List<tStuLeave> findBySname(String Sname);
         
@@ -27,4 +27,6 @@ public interface tStuLeaveBiz {
 	public List<tStuLeave> findAll();
 	
 	public List<tStuLeave> findByCondition(String condition);
+        
+        public List<tStuLeave> isORNotReturn(boolean flag);
 }
