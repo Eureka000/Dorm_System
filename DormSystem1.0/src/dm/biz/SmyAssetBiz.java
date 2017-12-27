@@ -17,4 +17,8 @@ public interface SmyAssetBiz {
 	public List<SmyAsset> findAll();
 
 	public List<SmyAsset> findByCondition(String condition);
+
+    public List<SmyAsset> findByAId(String con);
+
+    public List<SmyAsset> findByAname(String con);
 }

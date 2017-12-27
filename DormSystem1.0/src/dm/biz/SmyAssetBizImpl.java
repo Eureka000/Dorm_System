@@ -50,4 +50,18 @@ public class SmyAssetBizImpl implements SmyAssetBiz {
 		return adao.update(sql, params);
 	}
 
+    @Override
+    public List<SmyAsset> findByAId(String con) {
+        String sql = "select * from SmyAsset where Ano = ?";
+        Object[] params = {con};
+        return (List<SmyAsset>) adao.query(sql,SmyAsset.class, params);
+    }
+
+    @Override
+    public List<SmyAsset> findByAname(String con) {
+        String sql = "select * from SmyAsset where Aname = ?";
+	Object[] params = {con};
+	return (List<SmyAsset>) adao.query(sql,SmyAsset.class, params);
+    }
+
 }
