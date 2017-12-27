@@ -23,10 +23,10 @@ public class SDBizImpl implements SDBiz {
 		return sdao.update(sql, params);
 	}
 
-	public SD findById(String Dno)
+	public SD findById(String Sno)
 	{
-		String sql = "select * from SD where Dno = ?";
-		Object[] params = {Dno};
+		String sql = "select * from SD where Sno = ?";
+		Object[] params = {Sno};
 		return (SD) sdao.get(sql, SD.class, params);
 	}
         
