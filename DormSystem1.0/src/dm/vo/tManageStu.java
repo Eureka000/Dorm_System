@@ -1,6 +1,6 @@
 package dm.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class tManageStu {
 	private String sno;
@@ -19,6 +19,15 @@ public class tManageStu {
 		Sdept = sdept;
 		Dno = dno;
 		Scin = scin;
+	}
+        public tManageStu(String sno, String sname, String ssex, Integer sgrade, String sdept, String dno) {
+		super();
+		this.sno = sno;
+		Sname = sname;
+		Ssex = ssex;
+		Sgrade = sgrade;
+		Sdept = sdept;
+		Dno = dno;
 	}
 	public Date getScin() {
 		return Scin;

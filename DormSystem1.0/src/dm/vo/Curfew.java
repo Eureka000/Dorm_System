@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Curfew {
 	private String Sno;
-	private Date NightTime;
+	private String NightTime;
 	private String NightReason;
 	private String Tno;
 	public String getSno() {
@@ -13,10 +13,10 @@ public class Curfew {
 	public void setSno(String sno) {
 		Sno = sno;
 	}
-	public Date getNightTime() {
+	public String getNightTime() {
 		return NightTime;
 	}
-	public void setNightTime(Date nightTime) {
+	public void setNightTime(String nightTime) {
 		NightTime = nightTime;
 	}
 	public String getNightReason() {
@@ -34,7 +34,7 @@ public class Curfew {
 	public Curfew() {
 		super();
 	}
-	public Curfew(String sno, Date nightTime, String nightReason, String tno) {
+	public Curfew(String sno, String nightTime, String nightReason, String tno) {
 		super();
 		Sno = sno;
 		NightTime = nightTime;
