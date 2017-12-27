@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-package com.ouc.cpss.util;
-=======
+
 package dm.util;
->>>>>>> a1e7bf7ae2b29e2bfdbc530b622b3769d9bff5e3
+
+
 /**
  * <code>DataChooserJButton</code>类用于提供一个自定义的日期选择器控件
  * <p>
@@ -119,7 +118,6 @@ public class DateChooserJButton extends JButton {
     
     private class DateChooser extends JPanel implements ActionListener ,ChangeListener {
          
-<<<<<<< HEAD
         int startYear = Calendar.getInstance().get(Calendar.YEAR) - 10; 
         int lastYear = Calendar.getInstance().get(Calendar.YEAR); 
         int width = 200; 
@@ -141,29 +139,8 @@ public class DateChooserJButton extends JButton {
         Color rbBorderColor = Color.red; 
         Color rbButtonColor = Color.pink; 
         Color rbBtFontColor = Color.red;       
-=======
-        int startYear = Calendar.getInstance().get(Calendar.YEAR) - 10; //�
-        int lastYear = Calendar.getInstance().get(Calendar.YEAR); //��
-        int width = 200; //������
-        int height = 200; //����        
-        Color backGroundColor = Color.gray; //
-        //��������ɫ----------------//
-        Color palletTableColor = Color.white; //�
-        Color todayBackColor = Color.orange; //�
-        Color weekFontColor = Color.blue; //�������
-        Color dateFontColor = Color.black; //�������
-        Color weekendFontColor = Color.red; //�
-        
-        //��������ɫ------------------//
-        Color controlLineColor = Color.pink; //�
-        Color controlTextColor = Color.white; //
-        
-        
-        Color rbFontColor = Color.white; //RoundBox�
-        Color rbBorderColor = Color.red; //RoundBox�
-        Color rbButtonColor = Color.pink; //RoundBox�
-        Color rbBtFontColor = Color.red; //RoundBox        
->>>>>>> a1e7bf7ae2b29e2bfdbc530b622b3769d9bff5e3
+
+             
         JDialog dialog ;
         JSpinner yearSpin ;
         JSpinner monthSpin ;
@@ -208,10 +185,7 @@ public class DateChooserJButton extends JButton {
             JLabel monthLabel = new JLabel("月");
             monthLabel.setForeground(controlTextColor);
             result.add(monthLabel);
-            
-<<<<<<< HEAD
-             
-=======
+
             //hourSpin = new JSpinner(new SpinnerNumberModel(currentHour,0,23,1));
             //hourSpin.setPreferredSize(new Dimension(35,20)) ;
             //hourSpin.setName("Hour") ;
@@ -221,7 +195,6 @@ public class DateChooserJButton extends JButton {
             //JLabel hourLabel = new JLabel("��");
             // hourLabel.setForeground(controlTextColor);
             //result.add(hourLabel);            
->>>>>>> a1e7bf7ae2b29e2bfdbc530b622b3769d9bff5e3
             return result ;
         }
         

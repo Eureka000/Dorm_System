@@ -45,8 +45,8 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl = new javax.swing.JTable();
         item = new javax.swing.JComboBox();
-        start = new com.ouc.cpss.util.DateChooserJButton();
-        end = new com.ouc.cpss.util.DateChooserJButton();
+        start = new dm.util.DateChooserJButton();
+        end = new dm.util.DateChooserJButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -82,9 +82,9 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
                 .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(14, 14, 14)
                 .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(btnSearch)
@@ -167,11 +167,11 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
-    private com.ouc.cpss.util.DateChooserJButton end;
+    private dm.util.DateChooserJButton end;
     private javax.swing.JComboBox item;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.ouc.cpss.util.DateChooserJButton start;
+    private dm.util.DateChooserJButton start;
     private javax.swing.JTable tbl;
     // End of variables declaration//GEN-END:variables
 }

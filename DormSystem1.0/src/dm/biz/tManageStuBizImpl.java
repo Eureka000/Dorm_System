@@ -62,9 +62,7 @@ public class tManageStuBizImpl implements tManageStuBiz{
 	return sdao.update(sql, params);
         */
         SD d = new SD(s.getSno(),s.getDno(),s.getScin());
-        if(s.getScin()==null){
-            System.out.println(454);
-        }
+       
         SDBiz dbiz = new SDBizImpl();
         if(dbiz.update(d))
             return true;
