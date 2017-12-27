@@ -6,20 +6,19 @@ import dm.dao.AssetDao;
 import dm.po.Asset;
 
 public class AssetBizImpl implements AssetBiz{
-	//����Dao
+
 	AssetDao adao = new AssetDao();
 
 	
 	public boolean add(Asset a) {
 		String sql = "insert into Asset values(?,?,?,?)";
-		//params�еĲ����ǰ�˳�����������ֵ�������Ҫע�����ݱ�˳��
+
 		Object[] params = {a.getAno(), a.getAname(), a.getAprice(), a.getAstore()};
 		return adao.update(sql, params);
 	}
 
 
 	public boolean delete(String Ano) {
-
 		String sql = "delete from Asset where Ano = ?";
 		Object[] params = {Ano};
 		return adao.update(sql, params);
@@ -50,4 +49,6 @@ public class AssetBizImpl implements AssetBiz{
 		Object[] params = {Ano};
 		return (Asset) adao.get(sql, Asset.class, params);
 	}
+
+
 }

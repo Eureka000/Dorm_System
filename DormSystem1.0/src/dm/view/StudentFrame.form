@@ -24,51 +24,40 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="fixapply" max="32767" attributes="0"/>
-                  <Component id="logout" min="-2" pref="99" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="curfew" max="32767" attributes="0"/>
-                  <Component id="myinfo" min="-2" pref="95" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="mydorm" min="-2" pref="104" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="mymail" min="-2" pref="91" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
-                      <Component id="leave" min="-2" pref="122" max="-2" attributes="0"/>
+                  <Component id="leave" min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="mymail" min="-2" pref="91" max="-2" attributes="0"/>
+                  <Component id="myinfo" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Component id="logout" min="-2" pref="99" max="-2" attributes="0"/>
+                  <Component id="mydorm" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="curfew" alignment="0" pref="91" max="32767" attributes="0"/>
+                      <Component id="fixapply" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="111" max="32767" attributes="0"/>
+              <EmptySpace pref="614" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="logout" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="myinfo" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="mydorm" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="mymail" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="leave" min="-2" pref="72" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="fixapply" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="curfew" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace pref="103" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <Component id="logout" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="myinfo" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="mydorm" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="mymail" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="fixapply" min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="curfew" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="leave" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,16 +91,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6211;&#x7684;&#x5feb;&#x9012;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mymailActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="fixapply">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x62a5;&#x4fee;&#x7533;&#x8bf7;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fixapplyActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="curfew">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x665a;&#x5f52;&#x7533;&#x8bf7;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="curfewActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="leave">
       <Properties>

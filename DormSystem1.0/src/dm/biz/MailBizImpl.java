@@ -43,16 +43,37 @@ public class MailBizImpl implements MailBiz{
 		return sdao.query(sql, Mail.class, params);
 	}
 
-	public Mail findBySid(String sno) {
+	public List<Mail> findBySid(String sno) {
 		String sql = "select * from Mail where Sno = ?";
 		Object[] params = {sno};
-		return (Mail) sdao.get(sql, Mail.class, params);
+		return sdao.query(sql, Mail.class, params);
 	}
 	
-	public Mail findByMid(String mno) {
+	public List<Mail> findByMid(String mno) {
 		String sql = "select * from Mail where Sno = ?";
 		Object[] params = {mno};
-		return (Mail) sdao.get(sql, Mail.class, params);
+		return sdao.query(sql, Mail.class, params);
 	}
+
+    @Override
+    public List<Mail> findBySidTimeAll(String sno, String st, String ed) {
+        String sql = "select * from Mail where Marrive >= ? and Marrive <= ? and Sno = ? ";
+	Object[] params = {st, ed, sno};
+	return sdao.query(sql, Mail.class, params);
+    }
+
+    @Override
+    public List<Mail> findBySidTimeAr(String sno, String st, String ed) {
+        String sql = "select * from Mail where Marrive >= ? and Marrive <= ? and Sno = ? and Maccept is not null ";
+	Object[] params = {st, ed, sno};
+	return sdao.query(sql, Mail.class, params);
+    }
+
+    @Override
+    public List<Mail> findBySidTimeAc(String sno, String st, String ed) {
+        String sql = "select * from Mail where Marrive >= ? and Marrive <= ? and Sno = ? and Maccept is null ";
+	Object[] params = {st, ed, sno};
+	return sdao.query(sql, Mail.class, params);
+    }
 
 }

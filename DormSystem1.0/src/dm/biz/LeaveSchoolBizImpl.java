@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import dm.dao.LeaveSchoolDao;
-import dm.po.Asset;
 import dm.po.LeaveSchool;
 
 public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
@@ -37,9 +36,16 @@ public class LeaveSchoolBizImpl implements LeaveSchoolBiz {
 	}
 
 
-	public LeaveSchool findById (String sno) {
+	public List<LeaveSchool> findById (String sno) {
 		String sql = "select * from LeaveSchool where Sno = ?";
 		Object[] params = {sno};
-		return (LeaveSchool) sdao.get(sql, Asset.class, params);
+		return sdao.query(sql, LeaveSchool.class, params);
 	}
+
+    @Override
+    public List<LeaveSchool> findByIdDate(String Sno, String st, String ed) {
+        String sql = "select * from LeaveSchool where Sno = ? and Sltime >= ? and Sreturn <= ?";
+	Object[] params = {Sno, st, ed};
+	return sdao.query(sql, LeaveSchool.class, params);
+    }
 }

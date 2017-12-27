@@ -12,7 +12,7 @@ public class RepairsBizImpl implements RepairsBiz {
 	{		
 		String sql = "insert into Repairs values(?,?,?,?,?)";
 
-		Object[] params = {r.getAno(), r.getDno(),r.getReportTime(),r.getReportReason(),r.getFixTime()};
+		Object[] params = {r.getDno(), r.getAno(),r.getReportTime(),r.getReportReason(),r.getFixTime()};
 		return ddao.update(sql, params);
 		
 	}

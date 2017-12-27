@@ -9,7 +9,7 @@ public class SDBizImpl implements SDBiz {
 	SDDao sdao = new SDDao();
 	public boolean add(SD s)
 	{		
-		String sql = "insert into DA values(?,?,?)";
+		String sql = "insert into SD values(?,?,?)";
 
 		Object[] params = {s.getSno(), s.getDno(),s.getScin()};
 		return sdao.update(sql, params);
@@ -18,15 +18,15 @@ public class SDBizImpl implements SDBiz {
 
 	public boolean delete(String Sno, String Dno)
 	{
-		String sql = "delete from DA where Sno = ? AND Dno = ?";
+		String sql = "delete from SD where Sno = ? AND Dno = ?";
 		Object[] params = {Sno,Dno};
 		return sdao.update(sql, params);
 	}
 
-	public SD findById(String Dno)
+	public SD findById(String Sno)
 	{
-		String sql = "select * from DA where Dno = ?";
-		Object[] params = {Dno};
+		String sql = "select * from SD where Sno = ?";
+		Object[] params = {Sno};
 		return (SD) sdao.get(sql, SD.class, params);
 	}
 

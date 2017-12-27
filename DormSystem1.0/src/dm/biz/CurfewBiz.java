@@ -8,16 +8,16 @@ import dm.vo.*;
 public interface CurfewBiz {
 	public boolean add(Curfew c);
 
-	public boolean delete(String Sno,String Tno,Date NightTime);
+	public boolean delete(String Sno,String Tno,String NightTime);
 
-	
+	public List<Curfew> findById(String Sno);
 
-	public Curfew findBySId(String Sno);
-
-
+        public List<Curfew> findByIdNot(String Sno);
+        
+        public List<Curfew> findByIdAc(String Sno);
+        
 	public List<Curfew> findAll();
 
-	// 6 模糊查询
 	public List<Curfew> findByCondition(String condition);
 
 }

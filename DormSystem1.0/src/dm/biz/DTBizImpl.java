@@ -11,31 +11,25 @@ public class DTBizImpl implements DTBiz {
 	public boolean add(DT d)
 	{		
 		String sql = "insert into DT values(?,?)";
-		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+
 		Object[] params = {d.getBno(), d.getTno()};
 		return ddao.update(sql, params);
 		
 	}
 
-	public boolean delete(String Bno, String Tno)
+	public boolean delete(int Bno, String Tno)
 	{
 		String sql = "delete from DT where Bno = ? AND Tno = ?";
 		Object[] params = {Bno,Tno};
 		return ddao.update(sql, params);
 	}
 
-	public DT findByBno(String Bno)
+	public DT findById(String Bno)
 	{
 		String sql = "select * from DT where Bno = ?";
 		Object[] params = {Bno};
 		return (DT) ddao.get(sql, DT.class, params);
 	}
-        public DT findByTno(String Tno)
-        {
-                String sql = "select * from DT where Tno = ?";
-		Object[] params = {Tno};
-		return (DT) ddao.get(sql, DT.class, params);
-        }
 
 	public List<DT> findAll()
 	{

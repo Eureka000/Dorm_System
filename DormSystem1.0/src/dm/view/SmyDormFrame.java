@@ -5,8 +5,25 @@
  */
 package dm.view;
 
+import dm.biz.SDBiz;
+import dm.biz.SDBizImpl;
+import dm.biz.SmyAssetBiz;
+import dm.biz.SmyAssetBizImpl;
+import dm.biz.SmyDormBiz;
+import dm.biz.SmyDormBizImpl;
+import dm.biz.StudentBiz;
+import dm.biz.StudentBizImpl;
 import dm.po.Asset;
 import dm.po.Dormitory;
+import dm.po.Student;
+import dm.po.User;
+import dm.util.LocationUtil;
+import static dm.view.SmyInfoFrame.u;
+import dm.vo.SmyAsset;
+import dm.vo.SmyDorm;
+import java.util.List;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,14 +34,30 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form SmyDormFrame
      */
+    public static User u;
+    public static StudentBiz sbiz = new StudentBizImpl();
+    public Student s = sbiz.findById(u.getUno());
+    SmyDormBiz sd = new SmyDormBizImpl();
+    SmyAssetBiz sa = new SmyAssetBizImpl();
+    SDBiz sdb = new SDBizImpl();
+    public String Dno= sdb.findById(s.getSno()).getDno();
+    public SmyDorm smd = sd.findById(Dno);;
+  
     
-    public static Dormitory dorm;
-    public static Asset a;
     
     public SmyDormFrame() {
         initComponents();
+        this.txtBno.setText(smd.getBno());
+        this.txtDno.setText(smd.getDno());
+        this.txtDtel.setText(smd.getDtel());
+        this.txtBtime.setText(smd.getBtime());
+        this.txtScin.setText(sdb.findById(s.getSno()).getScin().toString());
+        List<SmyAsset> list = sa.findById(Dno);
+        showOnTable(list);
+        LocationUtil.setScreenCenter(this);
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +73,7 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblAsset = new javax.swing.JTable();
         txtBno = new javax.swing.JTextField();
         txtDno = new javax.swing.JTextField();
         txtBtime = new javax.swing.JTextField();
@@ -48,6 +81,11 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
         txtDtel = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtScin = new javax.swing.JTextField();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
 
         jLabel1.setText("宿舍号：");
 
@@ -57,15 +95,23 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
 
         jLabel4.setText("宿舍财产：");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblAsset.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
                 "财产号", "财产名", "数量"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblAsset);
 
         jLabel5.setText("宿舍电话：");
 
@@ -148,7 +194,25 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public void showOnTable(List<SmyAsset> list){
+        //将制定的list数据显示到表上
+        //1.获取指定表格（tblProduct）模型
+        DefaultTableModel dtm = (DefaultTableModel) this.tblAsset.getModel();
+        //2.清空表格信息
+        while(dtm.getRowCount() > 0){
+            dtm.removeRow(0);
+        }
+        
+        
+        //3.显示表格
+        for(SmyAsset s : list){
+            Vector vt = new Vector();
+            vt.add(s.getAno());
+            vt.add(s.getAname());
+            vt.add(s.getAmount());
+            dtm.addRow(vt);
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -159,7 +223,7 @@ public class SmyDormFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblAsset;
     private javax.swing.JTextField txtBno;
     private javax.swing.JTextField txtBtime;
     private javax.swing.JTextField txtDno;
