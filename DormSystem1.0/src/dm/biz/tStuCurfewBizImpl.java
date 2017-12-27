@@ -66,7 +66,7 @@ public class tStuCurfewBizImpl implements tStuCurfewBiz{
 
     
     public List<tStuCurfew> findByCondition(String condition) {
-        String sql = "select * from tStuCurfew and concat(Sno, Sname, Dno, Tno) like ?";
+        String sql = "select * from tStuCurfew where Sno+Sname+Dno+Tno like ?";
 		Object[] params = {"%"+condition+"%"};
 		return sdao.query(sql, tStuCurfew.class, params);
     }

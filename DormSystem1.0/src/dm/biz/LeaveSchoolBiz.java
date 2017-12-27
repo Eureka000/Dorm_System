@@ -14,9 +14,11 @@ public interface LeaveSchoolBiz {
 	public boolean delete(String dno, Date Sltime, Date Sreturn);
 	
 
-	public LeaveSchool findById(String sno);
+	public List<LeaveSchool> findById(String sno);
 
 	public List<LeaveSchool> findAll();
 	
 	public List<LeaveSchool> findByCondition(String condition);
+        
+        public List<LeaveSchool> findByIdDate(String Sno, String st, String ed);
 }

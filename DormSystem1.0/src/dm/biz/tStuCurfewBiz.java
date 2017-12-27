@@ -27,8 +27,6 @@ public interface tStuCurfewBiz {
         public List<tStuCurfew> findByPermit(); 
         
         public List<tStuCurfew> findByUnpermit(); 
-        
-	//public List<tStuCurfew> findBySname(String Sname);
 
 	public List<tStuCurfew> findAll();
 	

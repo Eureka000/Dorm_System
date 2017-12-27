@@ -18,7 +18,7 @@ public class BuildingBizImpl implements BuildingBiz{
 	}
 
 
-	public boolean delete(String Bno) {
+	public boolean delete(int Bno) {
 
 		String sql = "delete from Building where Bno = ?";
 		Object[] params = {Bno};
@@ -33,6 +33,7 @@ public class BuildingBizImpl implements BuildingBiz{
 	}
 
 
+	
 	public List<Building> findAll() {
 		String sql = "select * from Building";
 		return bdao.query(sql, Building.class);
@@ -46,7 +47,7 @@ public class BuildingBizImpl implements BuildingBiz{
 
 
 	@Override
-	public Building findById(String Bno) {
+	public Building findById(int Bno) {
 		String sql = "select * from Building where Bno = ?";
 		Object[] params = {Bno};
 		return (Building) bdao.get(sql, Building.class, params);

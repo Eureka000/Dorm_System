@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/util/StringUtil.java</file>
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/RepairsBizImpl.java</file>
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/DormitoryBiz.java</file>
@@ -66,6 +67,26 @@
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/biz/AssetBizImpl.java</file>
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/AssetDao.java</file>
             <file>file:/C:/Users/28104/Desktop/Dorm_System/DormSystem1.0/src/dm/dao/tStuCurfewDao.java</file>
+=======
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/StudentFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TmyInfoFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TstuLeaveFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/CurfewBizImpl.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/SleaveFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TstuCurfewFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/StringUtil.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/DormitoryBiz.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/DateChooserJButton.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/LocationUtil.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/tStuLeaveBiz.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TmanageStuFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/util/FrameUtil.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TeacherFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/TfixInfoFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/view/LoginFrame.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/tStuLeaveBizImpl.java</file>
+            <file>file:/E:/QingyuZhang/N2%20学习/2017%20Autumn/N2%20DataBase%20System/N4%20Course%20Design/New/Program%20File/Dorm_System/DormSystem1.0/src/dm/biz/CurfewBiz.java</file>
+>>>>>>> bb306adbe2225c428b95ba02bdb914720689a0d1
         </group>
     </open-files>
 </project-private>

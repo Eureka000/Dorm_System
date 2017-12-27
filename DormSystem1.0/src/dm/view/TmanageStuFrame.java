@@ -80,8 +80,8 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         txtDno = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        startDate = new com.ouc.cpss.util.DateChooserJButton();
-        endDate = new com.ouc.cpss.util.DateChooserJButton();
+        startDate = new dm.util.DateChooserJButton();
+        endDate = new dm.util.DateChooserJButton();
         jLabel7 = new javax.swing.JLabel();
         txtScin = new javax.swing.JTextField();
         btnDelete = new javax.swing.JButton();
@@ -499,7 +499,7 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnQuit;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox cobCondition;
-    private com.ouc.cpss.util.DateChooserJButton endDate;
+    private dm.util.DateChooserJButton endDate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -510,7 +510,7 @@ public class TmanageStuFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private com.ouc.cpss.util.DateChooserJButton startDate;
+    private dm.util.DateChooserJButton startDate;
     private javax.swing.JTable tabStudent;
     private javax.swing.JTextField txtCondition;
     private javax.swing.JTextField txtDno;

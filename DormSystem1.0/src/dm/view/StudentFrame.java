@@ -72,10 +72,25 @@ public class StudentFrame extends javax.swing.JFrame {
         });
 
         mymail.setText("我的快递");
+        mymail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mymailActionPerformed(evt);
+            }
+        });
 
         fixapply.setText("报修申请");
+        fixapply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fixapplyActionPerformed(evt);
+            }
+        });
 
         curfew.setText("晚归申请");
+        curfew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                curfewActionPerformed(evt);
+            }
+        });
 
         leave.setText("离校信息");
         leave.addActionListener(new java.awt.event.ActionListener() {
@@ -89,16 +104,19 @@ public class StudentFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(fixapply, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(curfew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
+                    .addComponent(leave, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mymail, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(myinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mydorm, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(curfew, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                        .addComponent(fixapply, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(614, Short.MAX_VALUE))
+=======
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(mydorm, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
@@ -107,10 +125,28 @@ public class StudentFrame extends javax.swing.JFrame {
                         .addGap(13, 13, 13)
                         .addComponent(leave, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(662, Short.MAX_VALUE))
+>>>>>>> a1e7bf7ae2b29e2bfdbc530b622b3769d9bff5e3
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(27, 27, 27)
+                .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(myinfo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mydorm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mymail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(fixapply, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(curfew)
+                .addGap(18, 18, 18)
+                .addComponent(leave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(94, Short.MAX_VALUE))
+=======
                 .addGap(102, 102, 102)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,13 +160,15 @@ public class StudentFrame extends javax.swing.JFrame {
                         .addComponent(fixapply, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(curfew, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(417, Short.MAX_VALUE))
+>>>>>>> a1e7bf7ae2b29e2bfdbc530b622b3769d9bff5e3
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void leaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_leaveActionPerformed
-        // TODO add your handling code here:
+        SleaveFrame.u = this.u;
+        showFrame(SleaveFrame.class);
     }//GEN-LAST:event_leaveActionPerformed
 
     private void myinfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myinfoActionPerformed
@@ -148,8 +186,25 @@ public class StudentFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutActionPerformed
 
     private void mydormActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mydormActionPerformed
-        
+        SmyDormFrame.u = this.u;
+        showFrame(SmyDormFrame.class);
     }//GEN-LAST:event_mydormActionPerformed
+
+    private void mymailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mymailActionPerformed
+        SmyMailFrame.u = this.u;
+        showFrame(SmyMailFrame.class);
+    }//GEN-LAST:event_mymailActionPerformed
+
+    private void curfewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_curfewActionPerformed
+        ScurFrame.u = this.u;
+
+        showFrame(ScurFrame.class);
+    }//GEN-LAST:event_curfewActionPerformed
+
+    private void fixapplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fixapplyActionPerformed
+        SfixFrame.u = this.u;
+        showFrame(SfixFrame.class);
+    }//GEN-LAST:event_fixapplyActionPerformed
 
     //显示窗体内容
     public void showFrame(Class clazz) {

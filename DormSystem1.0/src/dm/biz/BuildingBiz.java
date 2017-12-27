@@ -9,13 +9,13 @@ public interface BuildingBiz {
 	public boolean add(Building b);
 
 
-	public boolean delete(String Bno);
+	public boolean delete(int Bno);
 
 
 	public boolean update(Building b);
 
 
-	public Building findById(String Bno);
+	public Building findById(int Bno);
 
 
 	public List<Building> findAll();
