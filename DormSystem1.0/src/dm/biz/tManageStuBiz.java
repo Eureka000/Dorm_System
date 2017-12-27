@@ -35,6 +35,10 @@ public interface tManageStuBiz {
         public List<tManageStu> findByScin(String startDate,String endDate);
 
 	public List<tManageStu> findAll();
+        
+        public List<tManageStu> findAssigned();
+        
+        public List<tManageStu> findDisAssigned();
 	
 	public List<tManageStu> findByCondition(String condition);
 }
