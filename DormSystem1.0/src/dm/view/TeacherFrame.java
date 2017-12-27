@@ -24,6 +24,8 @@ public class TeacherFrame extends javax.swing.JFrame {
      */
     public TeacherFrame() {
         initComponents();
+        this.setTitle("教师用户");
+        LocationUtil.setScreenCenter(this); //窗口居中
     }
 
     /**
@@ -103,7 +105,7 @@ public class TeacherFrame extends javax.swing.JFrame {
                     .addComponent(curfewInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(assetManage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 387, Short.MAX_VALUE))
+                .addGap(0, 1185, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +124,7 @@ public class TeacherFrame extends javax.swing.JFrame {
                 .addComponent(assetManage)
                 .addGap(18, 18, 18)
                 .addComponent(logout)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
 
         pack();

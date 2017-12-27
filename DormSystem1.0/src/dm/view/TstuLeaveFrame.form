@@ -198,23 +198,30 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LeaveTableMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JComboBox" name="cobCondition">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="6">
                 <StringItem index="0" value="&#x5168;&#x90e8;"/>
                 <StringItem index="1" value="&#x5df2;&#x8fd4;&#x6821;"/>
                 <StringItem index="2" value="&#x672a;&#x8fd4;&#x6821;"/>
                 <StringItem index="3" value="&#x5b66;&#x53f7;"/>
-                <StringItem index="4" value="&#x5bbf;&#x820d;&#x53f7;"/>
+                <StringItem index="4" value="&#x59d3;&#x540d;"/>
+                <StringItem index="5" value="&#x5bbf;&#x820d;&#x53f7;"/>
               </StringArray>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCondition">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#x8bf7;&#x8f93;&#x5165;&#x6761;&#x4ef6;"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnSearch">
           <Properties>
@@ -271,6 +278,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x65b0;&#x589e;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnDelete">
           <Properties>
@@ -291,6 +301,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x9000;&#x51fa;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQuitActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

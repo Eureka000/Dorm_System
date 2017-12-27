@@ -27,4 +27,6 @@ public interface tStuLeaveBiz {
 	public List<tStuLeave> findAll();
 	
 	public List<tStuLeave> findByCondition(String condition);
+        
+        public List<tStuLeave> isORNotReturn(boolean flag);
 }

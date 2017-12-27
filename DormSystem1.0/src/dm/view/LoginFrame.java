@@ -22,6 +22,7 @@ public class LoginFrame extends javax.swing.JFrame {
     UserBiz ubiz = new UserBizImpl();  
     public LoginFrame() {
         initComponents();
+        this.setTitle("中国海洋大学学生宿舍管理系统");
         LocationUtil.setScreenCenter(this); //窗口居中
     }
 

@@ -7,6 +7,8 @@ package dm.view;
 
 import dm.biz.tStuLeaveBiz;
 import dm.biz.tStuLeaveBizImpl;
+import dm.util.FrameUtil;
+import dm.util.LocationUtil;
 import dm.vo.tStuLeave;
 import java.util.List;
 import java.util.Vector;
@@ -24,6 +26,11 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
     tStuLeaveBiz lsbiz= new tStuLeaveBizImpl();
     public TstuLeaveFrame() {
         initComponents();
+        this.setTitle("学生离/返校信息");
+        LocationUtil.setScreenCenter(this); //窗口居中
+        this.btnDelete.setEnabled(false);
+        this.btnAdd.setEnabled(false);
+        this.btnSave.setEnabled(false);
     }
 
     /**
@@ -71,9 +78,16 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
                 "学号", "姓名", "宿舍号", "离校时间", "返校时间"
             }
         ));
+        LeaveTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LeaveTableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(LeaveTable);
 
-        cobCondition.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "全部", "已返校", "未返校", "学号", "宿舍号" }));
+        cobCondition.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "全部", "已返校", "未返校", "学号", "姓名", "宿舍号" }));
+
+        txtCondition.setText("请输入条件");
 
         btnSearch.setText("查询");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +114,11 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
         });
 
         btnAdd.setText("新增");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("删除");
 
@@ -108,6 +127,11 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
         btnCancel.setText("取消");
 
         btnQuit.setText("退出");
+        btnQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -231,14 +255,21 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
             showOntable(list);
         }else if(choose.equals("已返校"))
         {
-            
+            List<tStuLeave> list=lsbiz.isORNotReturn(true);
+            showOntable(list);
         }
         else if(choose.equals("未返校"))
         {
-            
+            List<tStuLeave> list=lsbiz.isORNotReturn(false);
+            showOntable(list);
         }else if(choose.equals("学号"))
         {
             List<tStuLeave> list=lsbiz.findBySno(condition);
+            showOntable(list);
+        }
+        else if(choose.equals("姓名"))
+        {
+            List<tStuLeave> list=lsbiz.findBySname(condition);
             showOntable(list);
         }
         else
@@ -247,6 +278,37 @@ public class TstuLeaveFrame extends javax.swing.JInternalFrame {
             showOntable(list);
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void LeaveTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LeaveTableMouseClicked
+        // TODO add your handling code here:
+        //鼠标选中某行，信息显示到输入面板
+        int Row=this.LeaveTable.getSelectedRow();
+        this.txtSno.setText(this.LeaveTable.getValueAt(Row,0)+"");
+        this.txtSname.setText(this.LeaveTable.getValueAt(Row,1)+"");
+        this.txtDno.setText(this.LeaveTable.getValueAt(Row,2)+"");
+        this.txtSltime.setText(this.LeaveTable.getValueAt(Row,3)+"");
+        this.txtSreturn.setText(this.LeaveTable.getValueAt(Row,4)+"");
+        this.btnDelete.setEnabled(true);
+        this.btnSave.setEnabled(true);
+    }//GEN-LAST:event_LeaveTableMouseClicked
+
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+        // TODO add your handling code here:
+        // 退出前的清理工作
+        FrameUtil.framemap.remove(TstuLeaveFrame.class.getName());
+        this.dispose();  
+    }//GEN-LAST:event_btnQuitActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        // 获取离校信息
+        String Sno = this.txtSno.getText().trim();
+        String Sname = this.txtSname.getText().trim();
+        String Dno = this.txtDno.getText().trim();
+        String Sltime = this.txtSltime.getText().trim();
+        String Sreturn = this.txtSreturn.getText().trim();
+        
+    }//GEN-LAST:event_btnAddActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
