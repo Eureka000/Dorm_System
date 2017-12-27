@@ -12,6 +12,8 @@ public interface SDBiz {
         public boolean update(SD s);
         
 	public SD findById(String Dno);
+        
+        public SD findByStuId(String Sno);
 
 	public List<SD> findAll();
 
