@@ -46,7 +46,7 @@
                       <Component id="leave" min="-2" pref="122" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="111" max="32767" attributes="0"/>
+              <EmptySpace pref="662" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,7 +68,7 @@
                       <Component id="curfew" alignment="3" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="103" max="32767" attributes="0"/>
+              <EmptySpace pref="417" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

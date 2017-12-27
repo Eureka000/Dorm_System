@@ -23,12 +23,19 @@ public class SDBizImpl implements SDBiz {
 		return sdao.update(sql, params);
 	}
 
-	public SD findById(String Dno)
+	public SD findById(String Sno)
 	{
-		String sql = "select * from DA where Dno = ?";
-		Object[] params = {Dno};
+		String sql = "select * from SD where Sno = ?";
+		Object[] params = {Sno};
 		return (SD) sdao.get(sql, SD.class, params);
 	}
+        
+        public SD findByStuId(String Sno)
+        {
+            String sql = "select * from SD where Sno = ?";
+		Object[] params = {Sno};
+		return (SD) sdao.get(sql, SD.class, params);
+        }
 
 	public List<SD> findAll()
 	{
@@ -42,4 +49,11 @@ public class SDBizImpl implements SDBiz {
 		Object[] params = {"%"+condition+"%"};
 		return sdao.query(sql, SD.class, params);
 	}
+
+    @Override
+    public boolean update(SD s) {
+        String sql = "update SD set Dno = ?, Scin = ? where Sno = ?";
+        Object[] params = {s.getDno(),s.getScin(),s.getSno()};
+        return sdao.update(sql, params);
+    }
 }
