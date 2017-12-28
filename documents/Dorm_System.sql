@@ -172,27 +172,42 @@ create table Dormitory
 (Dno char(6) primary key,
  Bno char(2) not null,
  Dsize int not null,
+ Dsurplus int not null,	--空位
  Dtel char(20) not null,
  foreign key(Bno) references Building(Bno)
 );
 
-insert into Dormitory values('1#101','1','6','6001101');
-insert into Dormitory values('1#102','1','6','6001102');
-insert into Dormitory values('1#103','1','6','6001103');
-insert into Dormitory values('2#101','2','4','6002101');
-insert into Dormitory values('2#102','2','4','6002102');
-insert into Dormitory values('2#103','2','4','6002103');
-insert into Dormitory values('3#101','3','4','6003101');
-insert into Dormitory values('3#102','3','4','6003102');
-insert into Dormitory values('4#101','4','4','6004101');
-insert into Dormitory values('4#102','4','4','6004102');
-insert into Dormitory values('5#101','5','4','6005101');
-insert into Dormitory values('5#102','5','4','6005102');
-insert into Dormitory values('6#101','6','4','6006101');
-insert into Dormitory values('6#102','6','4','6006102');
-insert into Dormitory values('7#101','7','4','6007101');
-insert into Dormitory values('7#102','7','4','6007102');
-
+insert into Dormitory values('1#101','1','6','2','6001101');
+insert into Dormitory values('1#102','1','6','1','6001102');
+insert into Dormitory values('1#103','1','6','2','6001103');
+insert into Dormitory values('1#201','1','6','6','6001201');
+insert into Dormitory values('1#202','1','6','6','6001202');
+insert into Dormitory values('2#101','2','4','3','6002101');
+insert into Dormitory values('2#102','2','4','0','6002102');
+insert into Dormitory values('2#103','2','4','2','6002103');
+insert into Dormitory values('2#201','2','4','4','6002201');
+insert into Dormitory values('2#203','2','4','4','6002202');
+insert into Dormitory values('3#101','3','4','4','6003101');
+insert into Dormitory values('3#102','3','4','2','6003102');
+insert into Dormitory values('3#201','3','4','4','6003201');
+insert into Dormitory values('3#202','3','4','4','6003202');
+insert into Dormitory values('4#101','4','4','3','6004101');
+insert into Dormitory values('4#102','4','4','3','6004102');
+insert into Dormitory values('4#201','4','4','4','6004201');
+insert into Dormitory values('4#202','4','4','4','6004202');
+insert into Dormitory values('5#101','5','4','2','6005101');
+insert into Dormitory values('5#102','5','4','0','6005102');
+insert into Dormitory values('5#103','5','6','6','6005103');
+insert into Dormitory values('5#201','5','6','6','6005201');
+insert into Dormitory values('5#202','5','6','6','6005202');
+insert into Dormitory values('6#101','6','4','2','6006101');
+insert into Dormitory values('6#102','6','4','1','6006102');
+insert into Dormitory values('6#103','6','4','4','6006103');
+insert into Dormitory values('6#104','6','4','4','6006104');
+insert into Dormitory values('7#101','7','4','2','6007101');
+insert into Dormitory values('7#102','7','4','4','6007102');
+insert into Dormitory values('7#103','7','4','4','6007103');
+insert into Dormitory values('7#104','7','4','4','6007104');
 
 --创建Asset（财产）表
 create table Asset
