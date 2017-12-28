@@ -170,27 +170,28 @@ insert into Building values('7','南海苑','22:45:00');
 --创建Dormitory（宿舍）表
 create table Dormitory
 (Dno char(6) primary key,
- Bno char(2),
+ Bno char(2) not null,
+ Dsize int not null,
  Dtel char(20) not null,
  foreign key(Bno) references Building(Bno)
 );
 
-insert into Dormitory values('1#101','1','6001101');
-insert into Dormitory values('1#102','1','6001102');
-insert into Dormitory values('1#103','1','6001103');
-insert into Dormitory values('2#101','2','6002101');
-insert into Dormitory values('2#102','2','6002102');
-insert into Dormitory values('2#103','2','6002103');
-insert into Dormitory values('3#101','3','6003101');
-insert into Dormitory values('3#102','3','6003102');
-insert into Dormitory values('4#101','4','6004101');
-insert into Dormitory values('4#102','4','6004102');
-insert into Dormitory values('5#101','5','6005101');
-insert into Dormitory values('5#102','5','6005102');
-insert into Dormitory values('6#101','6','6006101');
-insert into Dormitory values('6#102','6','6006102');
-insert into Dormitory values('7#101','7','6007101');
-insert into Dormitory values('7#102','7','6007102');
+insert into Dormitory values('1#101','1','6','6001101');
+insert into Dormitory values('1#102','1','6','6001102');
+insert into Dormitory values('1#103','1','6','6001103');
+insert into Dormitory values('2#101','2','4','6002101');
+insert into Dormitory values('2#102','2','4','6002102');
+insert into Dormitory values('2#103','2','4','6002103');
+insert into Dormitory values('3#101','3','4','6003101');
+insert into Dormitory values('3#102','3','4','6003102');
+insert into Dormitory values('4#101','4','4','6004101');
+insert into Dormitory values('4#102','4','4','6004102');
+insert into Dormitory values('5#101','5','4','6005101');
+insert into Dormitory values('5#102','5','4','6005102');
+insert into Dormitory values('6#101','6','4','6006101');
+insert into Dormitory values('6#102','6','4','6006102');
+insert into Dormitory values('7#101','7','4','6007101');
+insert into Dormitory values('7#102','7','4','6007102');
 
 
 --创建Asset（财产）表
@@ -318,10 +319,9 @@ insert into Repairs values('2#103','7','2017-12-11 22:45:00','洗衣机不工作
 
 --创建SD（学生宿舍关系）表
 create table SD
-(Sno char(11),
+(Sno char(11) primary key,
  Dno char(6),
- Scin date not null,
- primary key(Sno,Dno),
+ Scin date,
  foreign key(Sno) references Student(Sno),
  foreign key(Dno) references Dormitory(Dno)
 );
