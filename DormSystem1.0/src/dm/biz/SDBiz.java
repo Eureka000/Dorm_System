@@ -13,8 +13,8 @@ public interface SDBiz {
 	public SD findById(String Sno);
 
         public boolean update(SD s);
-        
-
+              
+        public SD findByStuId(String Sno);
 
 	public List<SD> findAll();
 

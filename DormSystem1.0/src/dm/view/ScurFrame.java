@@ -5,40 +5,17 @@
  */
 package dm.view;
 
-import dm.biz.CurfewBiz;
-import dm.biz.CurfewBizImpl;
-import dm.biz.SDBiz;
-import dm.biz.SDBizImpl;
-import dm.biz.StudentBiz;
-import dm.biz.StudentBizImpl;
-import dm.po.User;
-import dm.vo.Curfew;
-import java.util.List;
-import java.util.Vector;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author LIUYIYU
  */
 public class ScurFrame extends javax.swing.JInternalFrame {
-    public static User u;
-    String sno = this.u.getUno();
-    CurfewBiz cbiz = new CurfewBizImpl();
-    SDBiz sd = new SDBizImpl();
-    StudentBiz sbiz = new StudentBizImpl();
-    
+
     /**
      * Creates new form ScurFrame1
      */
     public ScurFrame() {
-
         initComponents();
-        this.txtSno.setText(sno);
-        this.txtSname.setText(sbiz.findById(sno).getSname());
-        this.txtDno.setText(sd.findById(sno).getDno());
-       
     }
 
     /**
@@ -52,22 +29,21 @@ public class ScurFrame extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblCur = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         btnApply = new javax.swing.JButton();
         txtTime = new javax.swing.JTextField();
         txtReason = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        item = new javax.swing.JComboBox();
+        cobConditon = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         txtSno = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         txtSname = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtDno = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
 
-        tblCur.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -78,20 +54,15 @@ public class ScurFrame extends javax.swing.JInternalFrame {
                 "编号", "晚归时间", "晚归原因", "审批状态"
             }
         ));
-        jScrollPane1.setViewportView(tblCur);
+        jScrollPane1.setViewportView(jTable1);
 
         btnApply.setText("申请");
-        btnApply.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnApplyActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("晚归时间：");
 
         jLabel2.setText("晚归原因：");
 
-        item.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "全部", "已审批", "未审批" }));
+        cobConditon.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "全部", "已审批", "未审批" }));
 
         jLabel3.setText("学号：");
 
@@ -99,17 +70,14 @@ public class ScurFrame extends javax.swing.JInternalFrame {
 
         jLabel5.setText("宿舍号：");
 
-        btnSearch.setText("查询");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cobConditon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -141,25 +109,16 @@ public class ScurFrame extends javax.swing.JInternalFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnApply)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnSearch)
-                        .addGap(26, 26, 26))))
+                .addComponent(btnApply)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch))
-                .addGap(17, 17, 17)
+                .addComponent(cobConditon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 26, Short.MAX_VALUE)
+                .addGap(0, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(txtSno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -201,71 +160,10 @@ public class ScurFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int index = this.item.getSelectedIndex();
-        if(index==0){
-            List<Curfew> list = (List<Curfew>) cbiz.findById(sno);
-            showOnTable(list);
-        }
-        else if(index==1){
-            List<Curfew> list = (List<Curfew>) cbiz.findByIdAc(sno);
-            showOnTable(list);
-        }
-        else if(index==2){
-            List<Curfew> list = (List<Curfew>) cbiz.findByIdNot(sno);
-            showOnTable(list);
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
 
-    private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
-        String time = this.txtTime.getText();
-        String Reason = this.txtReason.getText();
-        //组合对象
-        Curfew c = new Curfew(sno, time, Reason, null);
-        //调用业务类
-        boolean result = cbiz.add(c);
-        if(result == true){
-            JOptionPane.showMessageDialog(this, "添加成功");
-             List<Curfew> list = cbiz.findAll();
-            //显示list的信息
-            showOnTable(list);
-        }
-        else
-            JOptionPane.showMessageDialog(this, "添加失败");
-        //清面板信息
-        clearInput();
-    }//GEN-LAST:event_btnApplyActionPerformed
-
-    public void showOnTable(List<Curfew> list){
-        //将制定的list数据显示到表上
-        //将制定的list数据显示到表上
-        //1.获取指定表格（tblProduct）模型
-        DefaultTableModel dtm = (DefaultTableModel) this.tblCur.getModel();
-        //2.清空表格信息
-        while(dtm.getRowCount() > 0){
-            dtm.removeRow(0);
-        }
-        
-        int i = 1;
-        //3.显示表格
-        for(Curfew s : list){
-            Vector vt = new Vector();
-            vt.add(i++);
-            vt.add(s.getNightTime());
-            vt.add(s.getNightReason());
-            vt.add(s.getTno());
-            dtm.addRow(vt);
-        }
-    }
-     //清空面板上的数据
-    private void clearInput() {
-        this.txtTime.setText("");
-        this.txtReason.setText("");
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApply;
-    private javax.swing.JButton btnSearch;
-    private javax.swing.JComboBox item;
+    private javax.swing.JComboBox cobConditon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -273,7 +171,7 @@ public class ScurFrame extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblCur;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtDno;
     private javax.swing.JTextField txtReason;
     private javax.swing.JTextField txtSname;

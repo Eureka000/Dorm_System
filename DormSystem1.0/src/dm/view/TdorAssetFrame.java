@@ -5,22 +5,12 @@
  */
 package dm.view;
 
-import dm.biz.SmyAssetBiz;
-import dm.biz.SmyAssetBizImpl;
-import dm.po.User;
-import dm.vo.SmyAsset;
-import java.util.List;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author 28104
  */
 public class TdorAssetFrame extends javax.swing.JInternalFrame {
-    public static User u;
-    SmyAssetBiz abiz = new SmyAssetBizImpl();
-    
+
     /**
      * Creates new form TdorAssetFrame
      */
@@ -39,17 +29,17 @@ public class TdorAssetFrame extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblAsset = new javax.swing.JTable();
+        jTable1 = new javax.swing.JTable();
         btnSearch = new javax.swing.JButton();
         txtCondition = new javax.swing.JTextField();
-        item = new javax.swing.JComboBox();
+        cobCondition = new javax.swing.JComboBox();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
 
-        tblAsset.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -57,16 +47,11 @@ public class TdorAssetFrame extends javax.swing.JInternalFrame {
                 "宿舍号", "财产号", "财产名", "数量"
             }
         ));
-        jScrollPane1.setViewportView(tblAsset);
+        jScrollPane1.setViewportView(jTable1);
 
         btnSearch.setText("查询");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
 
-        item.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "宿舍号", "财产号", "财产名" }));
+        cobCondition.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "宿舍号", "财产号", "财产名" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -75,7 +60,7 @@ public class TdorAssetFrame extends javax.swing.JInternalFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cobCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -89,7 +74,7 @@ public class TdorAssetFrame extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch)
-                    .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cobCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(116, 116, 116))
@@ -111,49 +96,13 @@ public class TdorAssetFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int index = this.item.getSelectedIndex();
-        String con = this.txtCondition.getText();
-        if(index==0){
-            List<SmyAsset> list = abiz.findById(con);
-            showOnTable(list);
-        }
-        else if(index==1){
-            List<SmyAsset> list = abiz.findByAId(con);
-            showOnTable(list);
-        }
-        else if(index==2){
-            List<SmyAsset> list = abiz.findByAname(con);
-            showOnTable(list);
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
 
-public void showOnTable(List<SmyAsset> list){
-        //将制定的list数据显示到表上
-        //1.获取指定表格（tblProduct）模型
-        DefaultTableModel dtm = (DefaultTableModel) this.tblAsset.getModel();
-        //2.清空表格信息
-        while(dtm.getRowCount() > 0){
-            dtm.removeRow(0);
-        }
-        
-        
-        //3.显示表格
-        for(SmyAsset s : list){
-            Vector vt = new Vector();
-            vt.add(s.getDno());
-            vt.add(s.getAno());
-            vt.add(s.getAname());
-            vt.add(s.getAmount());
-            dtm.addRow(vt);
-        }
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
-    private javax.swing.JComboBox item;
+    private javax.swing.JComboBox cobCondition;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblAsset;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCondition;
     // End of variables declaration//GEN-END:variables
 }

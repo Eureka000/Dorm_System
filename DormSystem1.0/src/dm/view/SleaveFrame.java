@@ -5,29 +5,16 @@
  */
 package dm.view;
 
-import dm.biz.LeaveSchoolBiz;
-import dm.biz.LeaveSchoolBizImpl;
-import dm.po.LeaveSchool;
-import dm.po.Mail;
-
-import dm.po.User;
-import java.util.List;
-import java.util.Vector;
-import javax.swing.table.DefaultTableModel;
-
 /**
  *
  * @author LIUYIYU
  */
 public class SleaveFrame extends javax.swing.JInternalFrame {
-    public static User u;
-    LeaveSchoolBiz lbiz = new LeaveSchoolBizImpl();
-    String Sno = u.getUno();
+
     /**
      * Creates new form SleaveFrame
      */
     public SleaveFrame() {
-        
         initComponents();
     }
 
@@ -43,10 +30,7 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         btnSearch = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl = new javax.swing.JTable();
-        item = new javax.swing.JComboBox();
-        start = new dm.util.DateChooserJButton();
-        end = new dm.util.DateChooserJButton();
+        jTable1 = new javax.swing.JTable();
 
         setClosable(true);
         setIconifiable(true);
@@ -54,13 +38,8 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
         setResizable(true);
 
         btnSearch.setText("查询");
-        btnSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchActionPerformed(evt);
-            }
-        });
 
-        tbl.setModel(new javax.swing.table.DefaultTableModel(
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -71,9 +50,7 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
                 "编号", "离校时间", "返校时间"
             }
         ));
-        jScrollPane1.setViewportView(tbl);
-
-        item.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "全部", "按时间" }));
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,12 +58,6 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
                 .addComponent(btnSearch)
                 .addGap(49, 49, 49))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -98,11 +69,7 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(item, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnSearch)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(131, 131, 131))
@@ -128,50 +95,11 @@ public class SleaveFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        int index = this.item.getSelectedIndex();
-        if(index==0){
-            List<LeaveSchool> list = lbiz.findById(Sno);
-            showOnTable(list);
-        }
-        else if(index==1){
-            String st = this.start.getText();
-            String ed = this.end.getText();
-            List<LeaveSchool> list = lbiz.findByIdDate(Sno, st, ed);
-            showOnTable(list);
-        }
-    }//GEN-LAST:event_btnSearchActionPerformed
-        
-
-    public void showOnTable(List<LeaveSchool> list){
-        //将制定的list数据显示到表上
-        //将制定的list数据显示到表上
-        //1.获取指定表格（tblProduct）模型
-        DefaultTableModel dtm = (DefaultTableModel) this.tbl.getModel();
-        //2.清空表格信息
-        while(dtm.getRowCount() > 0){
-            dtm.removeRow(0);
-        }
-        
-        int i = 1;
-        //3.显示表格
-        for(LeaveSchool s : list){
-            Vector vt = new Vector();
-            vt.add(i++);
-            vt.add(s.getSltime());
-            vt.add(s.getSreturn());
-            dtm.addRow(vt);
-        }
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSearch;
-    private dm.util.DateChooserJButton end;
-    private javax.swing.JComboBox item;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private dm.util.DateChooserJButton start;
-    private javax.swing.JTable tbl;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

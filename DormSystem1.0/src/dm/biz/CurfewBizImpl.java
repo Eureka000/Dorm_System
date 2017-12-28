@@ -7,18 +7,18 @@ import dm.dao.*;
 import dm.vo.Curfew;
 
 public class CurfewBizImpl implements CurfewBiz {
-	CurfewDao cdao = new CurfewDao();
+	CurfewDao cdao = new CurfewDao(); //修改6
 
 	
-	public boolean add(Curfew c) {
-		String sql = "insert into Curfew values(?,?,?,?)"; 
-
-		Object[] params = {c.getSno(), c.getNightTime(), c.getNightReason(),c.getTno()}; //�޸�9
+	public boolean add(Curfew c) { // 修改7
+		String sql = "insert into Curfew values(?,?,?,?,?)"; //修改8
+		//params中的参数是按顺序逐个给？赋值，因此需要注意数据表顺序
+		Object[] params = {c.getSno(), c.getNightTime(), c.getNightReason(),c.getTno()}; //修改9
 		return cdao.update(sql, params);
 	}
 
 
-	public boolean delete(String Sno,String Tno,String NightTime) {
+	public boolean delete(String Sno,String Tno,Date NightTime) {
 
 		String sql = "delete from Curfew where Sno = ? AND Tno = ? AND NightTime = ?";
 		Object[] params = {Sno,Tno,NightTime};
@@ -26,10 +26,10 @@ public class CurfewBizImpl implements CurfewBiz {
 		}
 
 
-	public List<Curfew> findById(String Sno) {
+	public Curfew findBySId(String Sno) {
 		String sql = "select * from Curfew where Sno = ?";
 		Object[] params = {Sno};
-		return  cdao.query(sql, Curfew.class, params);
+		return (Curfew) cdao.get(sql, Curfew.class, params);
 	}
 
 	public List<Curfew> findAll() {
@@ -42,18 +42,4 @@ public class CurfewBizImpl implements CurfewBiz {
 		Object[] params = {"%"+condition+"%"};
 		return cdao.query(sql, Curfew.class, params);
 	}
-
-    @Override
-    public List<Curfew> findByIdNot(String Sno) {
-        String sql = "select * from Curfew where Sno = ? and Tno is null";
-        Object[] params = {Sno};
-	return  cdao.query(sql, Curfew.class, params);
-    }
-
-    @Override
-    public List<Curfew> findByIdAc(String Sno) {
-        String sql = "select * from Curfew where Sno = ? and Tno is not null";
-	Object[] params = {Sno};
-	return  cdao.query(sql, Curfew.class, params);
-    }
 }

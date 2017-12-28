@@ -1,14 +1,13 @@
 package dm.vo;
 
 import java.sql.Time;
-import java.util.Date;
 
 public class Repairs {
 	private String Ano;
 	private String Dno;
-	private String ReportTime;
+	private Time ReportTime;
 	private String ReportReason;
-	private String FixTime;
+	private Time FixTime;
 	public String getAno() {
 		return Ano;
 	}
@@ -21,10 +20,10 @@ public class Repairs {
 	public void setDno(String dno) {
 		Dno = dno;
 	}
-	public String getReportTime() {
+	public Time getReportTime() {
 		return ReportTime;
 	}
-	public void setReportTime(String reportTime) {
+	public void setReportTime(Time reportTime) {
 		ReportTime = reportTime;
 	}
 	public String getReportReason() {
@@ -33,13 +32,13 @@ public class Repairs {
 	public void setReportReason(String reportReason) {
 		ReportReason = reportReason;
 	}
-	public String getFixTime() {
+	public Time getFixTime() {
 		return FixTime;
 	}
-	public void setFixTime(String fixTime) {
+	public void setFixTime(Time fixTime) {
 		FixTime = fixTime;
 	}
-	public Repairs(String ano, String dno, String reportTime, String reportReason, String fixTime) {
+	public Repairs(String ano, String dno, Time reportTime, String reportReason, Time fixTime) {
 		super();
 		Ano = ano;
 		Dno = dno;
